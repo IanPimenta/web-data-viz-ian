@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o numero de lados do dado:
+    <select id="select_dados">
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+        <option value="20">20</option>
+        <option value="100">100</option>
+    </select> <br>
+    Informe quantos dados:
+    <input type="number" id="input_qtd_dados"> <br>
+    Informe o modificador desejável:
+    <input type="number" id="input_modificador"> <br>
+    <div id="mostrarResultado"></div><br>
+    <button onclick="rolarDados()">Rolar Dados!</button>
+</body>
+</html>
+<script>
+    function rolarDados() {
+        mostrarResultado.innerHTML = ``
+        const ladoDado = Number(select_dados.value)
+        const qtdDado = Number(input_qtd_dados.value)
+        const modificador = Number(input_modificador.value)
+        var valorDado = 0
+        
+        for (numero = 1; numero <= qtdDado; numero += 1) {
+            if (modificador > 0) {
+            mostrarResultado.innerHTML += `D${ladoDado}: 
+            ${valorDado = parseInt(Math.random() * ladoDado + 1)} + 
+            ${modificador} = ${valorDado + modificador} <br>`
+            }
+
+            else {
+                mostrarResultado.innerHTML += `D${ladoDado}: 
+            ${valorDado = parseInt(Math.random() * ladoDado + 1)}<br>`
+            }
+            }
+    }
+</script>
+
+<!-- Math.random()*(valorMax-valorMin) + valorMin -->

@@ -1,0 +1,14 @@
+create database escudomestre;
+use escudomestre;
+
+create table usuario (
+idUsuario int primary key auto_increment,
+nomeCompleto varchar(100),
+nomeUsuario varchar(25),
+email varchar(100),
+senha varchar(24),
+raca varchar(25),
+classe varchar(25));
+
+drop table usuarios;
+select * from usuario;

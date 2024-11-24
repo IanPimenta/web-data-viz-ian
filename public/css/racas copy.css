@@ -1,0 +1,406 @@
+body {
+    margin: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.header {
+    position: fixed;
+    display: flex;
+    background-color: rgb(223, 223, 223);
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    z-index: 10;
+    border-bottom: 5px solid rgb(190, 0, 0);
+}
+
+.header .container {
+    padding-left: 1%;
+    padding-right: 2%;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.header .container img {
+    width: 75px;
+    height: 40px;
+}
+
+.container .navbar {
+    display: flex;
+    width: 650px;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .opcoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    min-width: 450px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.opcao {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    text-decoration: none;
+    color: black;
+}
+
+.container .botoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    min-width: 220px;
+}
+
+.botoes button {
+    width: 100px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: transform 0.5s ease;
+}
+
+.botoes button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.home {
+    border-top: white solid 66px;
+    width: 100%;
+    height: 500px;
+    background-image: url('imagens/dungeons-and-dragons-art-19.webp');
+    background-size: cover;
+    background-position: initial;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.informacoes {
+    width: 100%;
+    height: 600px;
+    background-image: url('imagens/fundosite.png');
+    background-size: cover;
+    background-position: initial;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.informacoes .descricao {
+    width: 70%;
+    height: 450px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+}
+
+.informacoes .imagem {
+    margin-inline: 5px;
+    width: 20%;
+    height: 500px;
+}
+
+.informacoes .imagem img {
+    height: 500px;
+}
+
+.informacoes .info-box {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box2 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box2 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box3 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box3 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box4 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box4 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box5 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box5 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box6 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box6 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box7 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box7 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box8 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box8 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.informacoes .info-box9 {
+    display: none; /* Inicialmente a div estará oculta */
+    position: fixed; /* Fixa a div na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente */
+    color: white;
+    z-index: 1000; /* Garante que a div fique sobre os outros elementos */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.informacoes .info-box9 .content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    margin-top: 1600px;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 1000;
+    margin: 10;
+    font-size: 20px;
+    text-align: justify;
+}
