@@ -197,45 +197,101 @@ body {
 
 .espaço-perguntas .questao-1 {
     display: none;
+    border: solid whitesmoke 10px;
+    border-radius: 5px;
     background-color: whitesmoke;
-    height: 70%;
+    height: 85%;
     width: 70%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     flex-direction: column;
 }
 
 .espaço-perguntas .questao-2 {
     display: none;
+    border: solid whitesmoke 10px;
+    border-radius: 5px;
     background-color: whitesmoke;
-    height: 70%;
+    height: 85%;
     width: 70%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     flex-direction: column;
 }
 
 .espaço-perguntas .questao-3 {
     display: none;
+    border: solid whitesmoke 10px;
+    border-radius: 5px;
     background-color: whitesmoke;
-    height: 70%;
+    height: 85%;
     width: 70%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     flex-direction: column;
 }
 
 .espaço-perguntas .questao-4 {
     display: none;
+    border: solid whitesmoke 10px;
+    border-radius: 5px;
     background-color: whitesmoke;
-    height: 70%;
+    height: 85%;
     width: 70%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     flex-direction: column;
 }
 
 .espaço-perguntas .questao-5 {
     display: none;
-    background-color: whitesmoke;
-    height: 70%;
-    width: 70%;
+    border: solid whitesmoke 10px;
     border-radius: 5px;
+    background-color: whitesmoke;
+    height: 85%;
+    width: 70%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.espaço-perguntas .titulo {
+    border-radius: 5px;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.espaço-perguntas .questoes {
+    height: 80%;
+    width: 97%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.espaço-perguntas .questoes .questao {
+    border: solid rgba(128, 128, 128, 0.178) 1px;
+    border-radius: 5px;
+    margin-block: 2px;
+    height: 7.5%;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    display: flex;
     flex-direction: column;
 }
