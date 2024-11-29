@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/quiz.css">
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -31,107 +33,284 @@
     <div class="espaço-perguntas">
         <div id="inicial" class="caixa-iniciar">
             <div class="imagem"></div>
-            <div class="titulo"><h3>Quiz de personalidade: Qual classe de Dungeons and Dragons mais combina com você?</h3></div>
-            <div class="botao"><button id="iniciarQuestoes"><h3>Descubra!</h3></button></div>
+            <div class="titulo">
+                <h3>Quiz de personalidade: Qual classe de Dungeons and Dragons mais combina com você?</h3>
+            </div>
+            <div class="botao"><button id="iniciarQuestoes" onclick="mostrarQuestaoAtual()">
+                    <h3>Descubra!</h3>
+                </button></div>
 
         </div>
         <div id="questao1" class="questao-1">
-            <div class="titulo"><h3>Questão 1 - Suponha que você vive em um universo medieval fantástico, dentre as opções, qual é mais compatível com a maneira que gostaria de viver?</h3></div>
-            <div class="questoes">
-                <div class="questao"><p>Nascer com dons mágicos naturais, e usar deles para cumprir com seus objetivos de vida.</p></div>
-                <div class="questao"><p>Se dedicar ao estudo aprofundado das artes místicas que regem esse universo, e se aprimorar no uso delas de modo geral.</p></div>
-                <div class="questao"><p>Dedicar sua vida ao deus/religião que crê, e ser abençoado com dons milagrosos provenientes de sua crença.</p></div>
-                <div class="questao"><p>Ser um soldado de sua religião, que defende sua crença e sua ordem por meio de suas aptidões físicas.</p></div>
-                <div class="questao"><p>Gostaria de viver uma vida isolada das cidades grandes, tendo preferência as grandes florestas, vivendo de suas próprias coletas e caças.</p></div>
-                <div class="questao"><p>Se aprofundar nos estudos e na proteção da natureza, da fauna e flora, utilizando do seu conhecimento e sua força para atingir seus objetivos.</p></div>
-                <div class="questao"><p>Se aprofundar no estudo de seres místicos distintos, e realizar pactos diversos com esses seres para atingir seus objetivos.</p></div>
-                <div class="questao"><p>Se aprimorar no aprimoramento físico pessoal, no uso de armas e armaduras, e técnicas diversas para defender algo ou alguém, pela honra, ou simplesmente para atingir seus objetivos.</p></div>
-                <div class="questao"><p>Viver de tirar proveito dos menos espertos ou dos que julga menos merecedores em meio as grandes cidades, usando de sua capacidade furtiva e sua inteligência analítica para benefício próprio.</p></div>
-                <div class="questao"><p>Viver em um clã unido e isolado de seres que seguem o mesmo ideal, utilizando de suas capacidades fisicas anormais e sentimentos incontroláveis para benefício mútuo.</p></div>
-                <div class="questao"><p>Viver uma vida leve e despreocupada, utilizando seu bom humor/dotes artísticos para conquistar a afeição das pessoas ao seu arredor.</p></div>
-                <div class="questao"><p>Viver em um mosteiro isolado da sociedade, com monges, aprimorando suas capacidades fisicas, espirituais e mentais.</p></div>
+            <div class="titulo">
+                <h3>Questão 1 - Suponha que você vive em um universo medieval fantástico, dentre as opções, qual é mais
+                    compatível com a maneira que gostaria de viver?</h3>
             </div>
-            <div class="botao"><button id="IrQuestao2"><h3>Prosseguir</h3></button></div>
+            <div class="questoes">
+                <div class="questao" onclick="feiticeiro()">
+                    <p>Nascer com dons mágicos naturais, e usar deles para cumprir com seus objetivos de vida.</p>
+                </div>
+                <div class="questao" onclick="mago()">
+                    <p>Se dedicar ao estudo aprofundado das artes místicas que regem esse universo, e se aprimorar no
+                        uso delas de modo geral.</p>
+                </div>
+                <div class="questao" onclick="clerigo()">
+                    <p>Dedicar sua vida ao deus/religião que crê, e ser abençoado com dons milagrosos provenientes de
+                        sua crença.</p>
+                </div>
+                <div class="questao" onclick="paladino()">
+                    <p>Ser um soldado de sua religião, que defende sua crença e sua ordem por meio de suas aptidões
+                        físicas.</p>
+                </div>
+                <div class="questao" onclick="patrulheiro()">
+                    <p>Gostaria de viver uma vida isolada das cidades grandes, tendo preferência as grandes florestas,
+                        vivendo de suas próprias coletas e caças.</p>
+                </div>
+                <div class="questao" onclick="druida()">
+                    <p>Se aprofundar nos estudos e na proteção da natureza, da fauna e flora, utilizando do seu
+                        conhecimento e sua força para atingir seus objetivos.</p>
+                </div>
+                <div class="questao" onclick="bruxo()">
+                    <p>Se aprofundar no estudo de seres místicos distintos, e realizar pactos diversos com esses seres
+                        para atingir seus objetivos.</p>
+                </div>
+                <div class="questao" onclick="guerreiro()">
+                    <p>Se aprimorar no aprimoramento físico pessoal, no uso de armas e armaduras, e técnicas diversas
+                        para defender algo ou alguém, pela honra, ou simplesmente para atingir seus objetivos.</p>
+                </div>
+                <div class="questao" onclick="ladino()">
+                    <p>Viver de tirar proveito dos menos espertos ou dos que julga menos merecedores em meio as grandes
+                        cidades, usando de sua capacidade furtiva e sua inteligência analítica para benefício próprio.
+                    </p>
+                </div>
+                <div class="questao" onclick="barbaro()">
+                    <p>Viver em um clã unido e isolado de seres que seguem o mesmo ideal, utilizando de suas capacidades
+                        fisicas anormais e sentimentos incontroláveis para benefício mútuo.</p>
+                </div>
+                <div class="questao" onclick="bardo()">
+                    <p>Viver uma vida leve e despreocupada, utilizando seu bom humor/dotes artísticos para conquistar a
+                        afeição das pessoas ao seu arredor.</p>
+                </div>
+                <div class="questao" onclick="monge()">
+                    <p>Viver em um mosteiro isolado da sociedade, com monges, aprimorando suas capacidades fisicas,
+                        espirituais e mentais.</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao2" onclick="mostrarQuestaoAtual()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao2" class="questao-2">
-            <div class="titulo"><h3>Questão 2 - Qual qualidade julga ser a mais importante dentre essas?</h3></div>
-            <div class="questoes">
-                <div class="questao"><p>Inteligência</p></div>
-                <div class="questao"><p>Fé</p></div>
-                <div class="questao"><p>Conhecimentos naturais</p></div>
-                <div class="questao"><p>Sabedoria</p></div>
-                <div class="questao"><p>Devoção</p></div>
-                <div class="questao"><p>Talento</p></div>
-                <div class="questao"><p>Esforço</p></div>
-                <div class="questao"><p>Força</p></div>
-                <div class="questao"><p>Paz</p></div>
-                <div class="questao"><p>Poder</p></div>
-                <div class="questao"><p>Carisma</p></div>
-                <div class="questao"><p>Esperteza</p></div>
+            <div class="titulo">
+                <h3>Questão 2 - Qual qualidade julga ser a mais importante dentre essas?</h3>
             </div>
-            <div class="botao"><button id="IrQuestao3"><h3>Prosseguir</h3></button></div>
+            <div class="questoes">
+                <div class="questao" onclick="mago()">
+                    <p>Inteligência</p>
+                </div>
+                <div class="questao" onclick="clerigo()">
+                    <p>Fé</p>
+                </div>
+                <div class="questao" onclick="druida()">
+                    <p>Conhecimentos naturais</p>
+                </div>
+                <div class="questao" onclick="patrulheiro()">
+                    <p>Sabedoria</p>
+                </div>
+                <div class="questao" onclick="paladino()">
+                    <p>Devoção</p>
+                </div>
+                <div class="questao" onclick="feiticeiro()">
+                    <p>Talento</p>
+                </div>
+                <div class="questao" onclick="guerreiro()">
+                    <p>Esforço</p>
+                </div>
+                <div class="questao" onclick="barbaro()">
+                    <p>Força</p>
+                </div>
+                <div class="questao" onclick="monge()">
+                    <p>Paz</p>
+                </div>
+                <div class="questao" onclick="bruxo()">
+                    <p>Poder</p>
+                </div>
+                <div class="questao" onclick="bardo()">
+                    <p>Carisma</p>
+                </div>
+                <div class="questao" onclick="ladino()">
+                    <p>Esperteza</p>
+                </div>
+
+            </div>
+            <div class="botao"><button id="IrQuestao3" onclick="mostrarQuestaoAtual()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao3" class="questao-3">
-            <div class="titulo"><h3>Questão 3 - Em um combate, qual postura você adotaria?</h3></div>
-            <div class="questoes">
-                <div class="questao"><p>Combate a longa distância utilizando magias inatas especificas.</p></div>
-                <div class="questao"><p>Ajudando com suporte a seus aliados, ficando longe do combate.</p></div>
-                <div class="questao"><p>Combate a longa distância, utilizando magias diversas adquiridas com estudos.</p></div>
-                <div class="questao"><p>Indo para a linha de frente com objetivo de causar grande dano, ao mesmo tempo que presta suporte aos aliados.</p></div>
-                <div class="questao"><p>Daria preferência para ambientes naturais onde teria maior vantagem tanto em ataques a curta quanto a longa distância.</p></div>
-                <div class="questao"><p>Utilizaria seu conhecimento sobre as magias da natureza para subjulgar seus adversários.</p></div>
-                <div class="questao"><p>Utilizaria uma variedade de técnicas de combate e armas para um combate direto.</p></div>
-                <div class="questao"><p>Utilizaria de sua força incomparável e sua fúria para desferir ataques avassaladores.</p></div>
-                <div class="questao"><p>Buscaria se manter furtivo em combate para realizar ataques oportunos.</p></div>
-                <div class="questao"><p>Buscaria uma postura calma diante da situação, analisando seus oponentes e utilizando sua maestria marcial para subjulgar seus oponentes o mais rápido possível.</p></div>
-                <div class="questao"><p>Fugiria do combate, presando por ser uma distração aos oponentes para que seus aliados tenham vantagem.</p></div>
-                <div class="questao"><p>Surpreenderia seus adversários com poderes desconhecidos provenientes de pactos com criaturas poderosas.</p></div>
+            <div class="titulo">
+                <h3>Questão 3 - Em um combate, qual postura você adotaria?</h3>
             </div>
-            <div class="botao"><button id="IrQuestao4"><h3>Prosseguir</h3></button></div>
+            <div class="questoes">
+                <div class="questao" onclick="feiticeiro()">
+                    <p>Combate a longa distância utilizando magias inatas especificas.</p>
+                </div>
+                <div class="questao" onclick="clerigo()">
+                    <p>Auxiliando seus aliados fora de combate com dons divinos.</p>
+                </div>
+                <div class="questao" onclick="mago()">
+                    <p>Combate a longa distância, utilizando magias diversas adquiridas com estudos.</p>
+                </div>
+                <div class="questao" onclick="paladino()">
+                    <p>Indo para a linha de frente com objetivo de causar grande dano, ao mesmo tempo que presta suporte
+                        aos aliados.</p>
+                </div>
+                <div class="questao" onclick="patrulheiro()">
+                    <p>Daria preferência para ambientes naturais onde teria maior vantagem tanto em ataques a curta
+                        quanto a longa distância.</p>
+                </div>
+                <div class="questao" onclick="druida()">
+                    <p>Utilizaria seu conhecimento sobre as magias da natureza para subjulgar seus adversários.</p>
+                </div>
+                <div class="questao" onclick="guerreiro()">
+                    <p>Utilizaria uma variedade de técnicas de combate e armas para um combate direto.</p>
+                </div>
+                <div class="questao" onclick="barbaro()">
+                    <p>Utilizaria de sua força incomparável e sua fúria para desferir ataques avassaladores.</p>
+                </div>
+                <div class="questao" onclick="ladino()">
+                    <p>Buscaria se manter furtivo em combate para realizar ataques oportunos.</p>
+                </div>
+                <div class="questao" onclick="monge()">
+                    <p>Buscaria uma postura calma diante da situação, analisando seus oponentes e utilizando sua
+                        maestria marcial para subjulgar seus oponentes o mais rápido possível.</p>
+                </div>
+                <div class="questao" onclick="bardo()">
+                    <p>Fugiria do combate, presando por ser uma distração aos oponentes para que seus aliados tenham
+                        vantagem.</p>
+                </div>
+                <div class="questao" onclick="bruxo()">
+                    <p>Surpreenderia seus adversários com poderes desconhecidos provenientes de pactos com criaturas
+                        poderosas.</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao4" onclick="mostrarQuestaoAtual()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao4" class="questao-4">
-            <div class="titulo"><h3>Questão 4 - No seu dia a dia, qual seria sua rotina?</h3></div>
-            <div class="questoes">
-                <div class="questao"><p>Estudando sobre criaturas além da sua compreensão em busca de estabelecer pactos e adquirir fontes de poder.</p></div>
-                <div class="questao"><p>Se aprimorando fisicamente por meio das artes marciais e mentalmente com meditações.</p></div>
-                <div class="questao"><p>Cantando em tavernas, elaborando canções épicas para cativar as pessoas e treinando com seus instrumentos.</p></div>
-                <div class="questao"><p>Usando seus dons físicos junto aos seus familiares para subjugar e conquistar novos territórios.</p></div>
-                <div class="questao"><p>Cometendo delitos, como furtos e trapaças para lucrar, se divertir e/ou fazer justiça.</p></div>
-                <div class="questao"><p>Realizando treinamentos físicos e estratégicos árduos para aprimorar seu combate.</p></div>
-                <div class="questao"><p>Estudando a fauna e a flora em busca de se tornar um aliado da natureza.</p></div>
-                <div class="questao"><p>Caçando e explorando nas densas florestas,  desvendando seus segredos e aprimorando suas capacidades.</p></div>
-                <div class="questao"><p>Estudando sua religião, cumprindo com os deveres de sua fé, e treinando para defender sua ordem.</p></div>
-                <div class="questao"><p>Estudando sua religião e cumprindo com os deveres de sua fé, e se aprofundando em seus atos milagrosos.</p></div>
-                <div class="questao"><p>Passaria estudando as artes arcanas, se aprofundando em seus mistérios sempre em busca de novos conhecimentos.</p></div>
-                <div class="questao"><p>Se aprimoraria em seus dons mágicos pessoais.</p></div>
+            <div class="titulo">
+                <h3>Questão 4 - No seu dia a dia, qual seria sua rotina?</h3>
             </div>
-            <div class="botao"><button id="IrQuestao5"><h3>Prosseguir</h3></button></div>
+            <div class="questoes">
+                <div class="questao" onclick="bruxo()">
+                    <p>Estudando sobre criaturas além da sua compreensão em busca de estabelecer pactos e adquirir
+                        fontes de poder.</p>
+                </div>
+                <div class="questao" onclick="monge()">
+                    <p>Se aprimorando fisicamente por meio das artes marciais e mentalmente com meditações.</p>
+                </div>
+                <div class="questao" onclick="bardo()">
+                    <p>Cantando em tavernas, elaborando canções épicas para cativar as pessoas e treinando com seus
+                        instrumentos.</p>
+                </div>
+                <div class="questao" onclick="barbaro()">
+                    <p>Usando seus dons físicos junto aos seus familiares para subjugar e conquistar novos territórios.
+                    </p>
+                </div>
+                <div class="questao" onclick="ladino()">
+                    <p>Cometendo delitos, como furtos e trapaças para lucrar, se divertir e/ou fazer justiça.</p>
+                </div>
+                <div class="questao" onclick="guerreiro()">
+                    <p>Realizando treinamentos físicos e estratégicos árduos para aprimorar seu combate.</p>
+                </div>
+                <div class="questao" onclick="druida()">
+                    <p>Estudando a fauna e a flora em busca de se tornar um aliado da natureza.</p>
+                </div>
+                <div class="questao" onclick="patrulheiro()">
+                    <p>Caçando e explorando nas densas florestas, desvendando seus segredos e aprimorando suas
+                        capacidades.</p>
+                </div>
+                <div class="questao" onclick="paladino()">
+                    <p>Estudando sua religião, cumprindo com os deveres de sua fé, e treinando para defender sua ordem.
+                    </p>
+                </div>
+                <div class="questao" onclick="clerigo()">
+                    <p>Estudando sua religião e cumprindo com os deveres de sua fé, e se aprofundando em seus atos
+                        milagrosos.</p>
+                </div>
+                <div class="questao" onclick="mago()">
+                    <p>Passaria estudando as artes arcanas, se aprofundando em seus mistérios sempre em busca de novos
+                        conhecimentos.</p>
+                </div>
+                <div class="questao" onclick="feiticeiro()">
+                    <p>Se aprimoraria em seus dons mágicos pessoais.</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao5" onclick="mostrarQuestaoAtual()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao5" class="questao-5">
-            <div class="titulo"><h3>Questão 5 - Com qual frase você mais se identifica?</h3></div>
-            <div class="questoes">
-                <div class="questao"><p>O conhecimento é um tesouro que ninguém pode tirar de você.</p></div>
-                <div class="questao"><p>A natureza é cheia de magia, mas você só percebe quando está em contato direto com ela.</p></div>
-                <div class="questao"><p>Resistir, persistir e nunca desistir.</p></div>
-                <div class="questao"><p>As ideias se copiam, o talento jamais.</p></div>
-                <div class="questao"><p>A raiva é como um combustível, ela nos impulsiona seja para o bem ou para o mal.
-                </p></div>
-                <div class="questao"><p>As maiores bençãos chegam logo após as maiores provações.</p></div>
-                <div class="questao"><p>A solidão não é a ausência de nada, é só a presença intensa de nós mesmos.</p></div>
-                <div class="questao"><p>O mundo é dos espertos.</p></div>
-                <div class="questao"><p>A paz interior ajuda a enfrentar qualquer situação com calma e clareza mental.</p></div>
-                <div class="questao"><p>Tudo posso naquele que me fortalece.</p></div>
-                <div class="questao"><p>Sem dor, sem ganho.</p></div>
-                <div class="questao"><p>Quem canta, seus males espanta.</p></div>
+            <div class="titulo">
+                <h3>Questão 5 - Com qual frase você mais se identifica?</h3>
             </div>
-            <div class="botao"><button id="Finalizar"><h3>Prosseguir</h3></button></div>
+            <div class="questoes">
+                <div class="questao" onclick="mago()" value>
+                    <p>O conhecimento é um tesouro que ninguém pode tirar de você.</p>
+                </div>
+                <div class="questao" onclick="druida()">
+                    <p>A natureza é cheia de magia, mas você só percebe quando está em contato direto com ela.</p>
+                </div>
+                <div class="questao" onclick="guerreiro()">
+                    <p>Resistir, persistir e nunca desistir.</p>
+                </div>
+                <div class="questao" onclick="feiticeiro()">
+                    <p>As ideias se copiam, o talento jamais.</p>
+                </div>
+                <div class="questao" onclick="barbaro()">
+                    <p>A raiva é como um combustível, ela nos impulsiona seja para o bem ou para o mal.
+                    </p>
+                </div>
+                <div class="questao" onclick="paladino()">
+                    <p>As maiores bençãos chegam logo após as maiores provações.</p>
+                </div>
+                <div class="questao" onclick="patrulheiro()">
+                    <p>A solidão não é a ausência de nada, é só a presença intensa de nós mesmos.</p>
+                </div>
+                <div class="questao" onclick="ladino()">
+                    <p>O mundo é dos espertos.</p>
+                </div>
+                <div class="questao" onclick="monge()">
+                    <p>A paz interior ajuda a enfrentar qualquer situação com calma e clareza mental.</p>
+                </div>
+                <div class="questao" onclick="clerigo()">
+                    <p>Tudo posso naquele que me fortalece.</p>
+                </div>
+                <div class="questao" onclick="bruxo()">
+                    <p>Sem dor, sem ganho.</p>
+                </div>
+                <div class="questao" onclick="bardo()">
+                    <p>Quem canta, seus males espanta.</p>
+                </div>
+            </div>
+            <div class="botao"><button id="Finalizar" onclick="finalizar()">
+                    <h3>Finalizar</h3>
+                </button></div>
+        </div>
+        <div id="final" class="caixa-finalizar">
+            <div class="imagem"></div>
+            <div class="titulo" id="resultado">
+            </div>
         </div>
     </div>
 
 </body>
+
 </html>
 
 <script>
+
     //Iniciar Quiz
     // Selecionando os elementos
     const inicial = document.getElementById('inicial')
@@ -144,6 +323,8 @@
     const IrQuestao4 = document.getElementById('IrQuestao4');
     const questao5 = document.getElementById('questao5');
     const IrQuestao5 = document.getElementById('IrQuestao5');
+    const final = document.getElementById('final');
+    const Finalizar = document.getElementById('Finalizar');
 
 
     // Função para mostrar a div
@@ -171,4 +352,1069 @@
         questao5.style.display = 'flex'; // Torna a div visível
         questao4.style.display = 'none'
     });
+
+    Finalizar.addEventListener('click', () => {
+        final.style.display = 'flex'; // Torna a div visível
+        questao5.style.display = 'none'
+    });
+
+    // Selecionar todas as divs com a classe "item"
+    const items = document.querySelectorAll('.questao');
+
+    // Adicionar um evento de clique em cada item
+    items.forEach(questao => {
+        questao.addEventListener('click', function () {
+            // Remover a classe "selected" de todos os itens
+            items.forEach(i => i.classList.remove('selected'));
+
+            // Adicionar a classe "selected" no item clicado
+            this.classList.add('selected');
+        });
+    });
+
+
+    var questaoAtual = 0
+
+    //Questão 1
+    var pontobarbaro = 0
+    var pontobardo = 0
+    var pontobruxo = 0
+    var pontoclerigo = 0
+    var pontodruida = 0
+    var pontofeiticeiro = 0
+    var pontoguerreiro = 0
+    var pontoladino = 0
+    var pontomago = 0
+    var pontomonge = 0
+    var pontopatrulheiro = 0
+    var pontopaladino = 0
+
+    //Questão 2
+    var ponto2barbaro = 0
+    var ponto2bardo = 0
+    var ponto2bruxo = 0
+    var ponto2clerigo = 0
+    var ponto2druida = 0
+    var ponto2feiticeiro = 0
+    var ponto2guerreiro = 0
+    var ponto2ladino = 0
+    var ponto2mago = 0
+    var ponto2monge = 0
+    var ponto2patrulheiro = 0
+    var ponto2paladino = 0
+
+    //Questão 3
+    var ponto3barbaro = 0
+    var ponto3bardo = 0
+    var ponto3bruxo = 0
+    var ponto3clerigo = 0
+    var ponto3druida = 0
+    var ponto3feiticeiro = 0
+    var ponto3guerreiro = 0
+    var ponto3ladino = 0
+    var ponto3mago = 0
+    var ponto3monge = 0
+    var ponto3patrulheiro = 0
+    var ponto3paladino = 0
+
+    //Questão 4
+    var ponto4barbaro = 0
+    var ponto4bardo = 0
+    var ponto4bruxo = 0
+    var ponto4clerigo = 0
+    var ponto4druida = 0
+    var ponto4feiticeiro = 0
+    var ponto4guerreiro = 0
+    var ponto4ladino = 0
+    var ponto4mago = 0
+    var ponto4monge = 0
+    var ponto4patrulheiro = 0
+    var ponto4paladino = 0
+
+    //Questão 5
+    var ponto5barbaro = 0
+    var ponto5bardo = 0
+    var ponto5bruxo = 0
+    var ponto5clerigo = 0
+    var ponto5druida = 0
+    var ponto5feiticeiro = 0
+    var ponto5guerreiro = 0
+    var ponto5ladino = 0
+    var ponto5mago = 0
+    var ponto5monge = 0
+    var ponto5patrulheiro = 0
+    var ponto5paladino = 0
+
+
+    function mostrarQuestaoAtual() {
+        questaoAtual += 1
+    }
+
+    function barbaro() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 1
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 1
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 1
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 1
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 1
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function bardo() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 1
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 1
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 1
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 1
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 1
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function bruxo() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 1
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 1
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 1
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 1
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 1
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function clerigo() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 1
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 1
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 1
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 1
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 1
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function druida() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 1
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 1
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 1
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 1
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 1
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function feiticeiro() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 1
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 1
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 1
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 1
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 1
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function guerreiro() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 1
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 1
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 1
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 1
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 1
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function ladino() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 1
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 1
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 1
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 1
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 1
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function mago() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 1
+            pontomonge = 0
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 1
+            ponto2monge = 0
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 1
+            ponto3monge = 0
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 1
+            ponto4monge = 0
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 1
+            ponto5monge = 0
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function monge() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 1
+            pontopatrulheiro = 0
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 1
+            ponto2patrulheiro = 0
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 1
+            ponto3patrulheiro = 0
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 1
+            ponto4patrulheiro = 0
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 1
+            ponto5patrulheiro = 0
+            ponto5paladino = 0
+        }
+    }
+    function patrulheiro() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro = 1
+            pontopaladino = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro = 1
+            ponto2paladino = 0
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro = 1
+            ponto3paladino = 0
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro = 1
+            ponto4paladino = 0
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro = 1
+            ponto5paladino = 0
+        }
+    }
+    function paladino() {
+
+        if (questaoAtual == 1) {
+            pontobarbaro = 0
+            pontobardo = 0
+            pontobruxo = 0
+            pontoclerigo = 0
+            pontodruida = 0
+            pontofeiticeiro = 0
+            pontoguerreiro = 0
+            pontoladino = 0
+            pontomago = 0
+            pontomonge = 0
+            pontopatrulheiro
+            pontopaladino = 1
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2barbaro = 0
+            ponto2bardo = 0
+            ponto2bruxo = 0
+            ponto2clerigo = 0
+            ponto2druida = 0
+            ponto2feiticeiro = 0
+            ponto2guerreiro = 0
+            ponto2ladino = 0
+            ponto2mago = 0
+            ponto2monge = 0
+            ponto2patrulheiro
+            ponto2paladino = 1
+        }
+        else if (questaoAtual == 3) {
+            ponto3barbaro = 0
+            ponto3bardo = 0
+            ponto3bruxo = 0
+            ponto3clerigo = 0
+            ponto3druida = 0
+            ponto3feiticeiro = 0
+            ponto3guerreiro = 0
+            ponto3ladino = 0
+            ponto3mago = 0
+            ponto3monge = 0
+            ponto3patrulheiro
+            ponto3paladino = 1
+        }
+        else if (questaoAtual == 4) {
+            ponto4barbaro = 0
+            ponto4bardo = 0
+            ponto4bruxo = 0
+            ponto4clerigo = 0
+            ponto4druida = 0
+            ponto4feiticeiro = 0
+            ponto4guerreiro = 0
+            ponto4ladino = 0
+            ponto4mago = 0
+            ponto4monge = 0
+            ponto4patrulheiro
+            ponto4paladino = 1
+        }
+        else {
+            ponto5barbaro = 0
+            ponto5bardo = 0
+            ponto5bruxo = 0
+            ponto5clerigo = 0
+            ponto5druida = 0
+            ponto5feiticeiro = 0
+            ponto5guerreiro = 0
+            ponto5ladino = 0
+            ponto5mago = 0
+            ponto5monge = 0
+            ponto5patrulheiro
+            ponto5paladino = 1
+        }
+    }
+
+    function finalizar() {
+        //Pontos Definitivos
+        var pontoDefinitivoBarbaro = pontobarbaro + ponto2barbaro + ponto3barbaro + ponto4barbaro + ponto5barbaro
+        var pontoDefinitivoBardo = pontobardo + ponto2bardo + ponto3bardo + ponto4bardo + ponto5bardo
+        var pontoDefinitivoBruxo = pontobruxo + ponto2bruxo + ponto3bruxo + ponto4bruxo + ponto5bruxo
+        var pontoDefinitivoClerigo = pontoclerigo + ponto2clerigo + ponto3clerigo + ponto4clerigo + ponto5clerigo
+        var pontoDefinitivoDruida = pontodruida + ponto2druida + ponto3druida + ponto4druida + ponto5druida
+        var pontoDefinitivoFeiticeiro = pontofeiticeiro + ponto2feiticeiro + ponto3feiticeiro + ponto4feiticeiro + ponto5feiticeiro
+        var pontoDefinitivoGuerreiro = pontoguerreiro + ponto2guerreiro + ponto3guerreiro + ponto4guerreiro + ponto5guerreiro
+        var pontoDefinitivoLadino = pontoladino + ponto2ladino + ponto3ladino + ponto4ladino + ponto5ladino
+        var pontoDefinitivoMago = pontomago + ponto2mago + ponto3mago + ponto4mago + ponto5mago
+        var pontoDefinitivoMonge = pontomonge + ponto2monge + ponto3monge + ponto4monge + ponto5monge
+        var pontoDefinitivoPatrulheiro = pontopatrulheiro + ponto2patrulheiro + ponto3patrulheiro + ponto4patrulheiro + ponto5patrulheiro
+        var pontoDefinitivoPaladino = pontopaladino + ponto2paladino + ponto3paladino + ponto4paladino + ponto5paladino
+
+        if (pontoDefinitivoBarbaro > pontoDefinitivoBardo && pontoDefinitivoBarbaro > pontoDefinitivoBruxo && pontoDefinitivoBarbaro > pontoDefinitivoClerigo && pontoDefinitivoBarbaro > pontoDefinitivoDruida && pontoDefinitivoBarbaro > pontoDefinitivoFeiticeiro && pontoDefinitivoBarbaro > pontoDefinitivoGuerreiro && pontoDefinitivoBarbaro > pontoDefinitivoLadino && pontoDefinitivoBarbaro > pontoDefinitivoMago && pontoDefinitivoBarbaro > pontoDefinitivoMonge && pontoDefinitivoBarbaro > pontoDefinitivoPatrulheiro && pontoDefinitivoBarbaro > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `BARBARO`
+        }
+
+        else if (pontoDefinitivoBardo > pontoDefinitivoBarbaro && pontoDefinitivoBardo > pontoDefinitivoBruxo && pontoDefinitivoBardo > pontoDefinitivoClerigo && pontoDefinitivoBardo > pontoDefinitivoDruida && pontoDefinitivoBardo > pontoDefinitivoFeiticeiro && pontoDefinitivoBardo > pontoDefinitivoGuerreiro && pontoDefinitivoBardo > pontoDefinitivoLadino && pontoDefinitivoBardo > pontoDefinitivoMago && pontoDefinitivoBardo > pontoDefinitivoMonge && pontoDefinitivoBardo > pontoDefinitivoPatrulheiro && pontoDefinitivoBardo > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `BARDO`
+
+        }
+
+        else if (pontoDefinitivoBruxo > pontoDefinitivoBardo && pontoDefinitivoBruxo > pontoDefinitivoBarbaro && pontoDefinitivoBruxo > pontoDefinitivoClerigo && pontoDefinitivoBruxo > pontoDefinitivoDruida && pontoDefinitivoBruxo > pontoDefinitivoFeiticeiro && pontoDefinitivoBruxo > pontoDefinitivoGuerreiro && pontoDefinitivoBruxo > pontoDefinitivoLadino && pontoDefinitivoBruxo > pontoDefinitivoMago && pontoDefinitivoBruxo > pontoDefinitivoMonge && pontoDefinitivoBruxo > pontoDefinitivoPatrulheiro && pontoDefinitivoBruxo > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `BRUXO`
+
+        }
+
+        else if (pontoDefinitivoClerigo > pontoDefinitivoBardo && pontoDefinitivoClerigo > pontoDefinitivoBruxo && pontoDefinitivoClerigo > pontoDefinitivoBarbaro && pontoDefinitivoClerigo > pontoDefinitivoDruida && pontoDefinitivoClerigo > pontoDefinitivoFeiticeiro && pontoDefinitivoClerigo > pontoDefinitivoGuerreiro && pontoDefinitivoClerigo > pontoDefinitivoLadino && pontoDefinitivoClerigo > pontoDefinitivoMago && pontoDefinitivoClerigo > pontoDefinitivoMonge && pontoDefinitivoClerigo > pontoDefinitivoPatrulheiro && pontoDefinitivoClerigo > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `CLERIGO`
+        }
+
+        else if (pontoDefinitivoDruida > pontoDefinitivoBardo && pontoDefinitivoDruida > pontoDefinitivoBruxo && pontoDefinitivoDruida > pontoDefinitivoClerigo && pontoDefinitivoDruida > pontoDefinitivoBarbaro && pontoDefinitivoDruida > pontoDefinitivoFeiticeiro && pontoDefinitivoDruida > pontoDefinitivoGuerreiro && pontoDefinitivoDruida > pontoDefinitivoLadino && pontoDefinitivoDruida > pontoDefinitivoMago && pontoDefinitivoDruida > pontoDefinitivoMonge && pontoDefinitivoDruida > pontoDefinitivoPatrulheiro && pontoDefinitivoDruida > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `DRUIDA`
+        }
+
+        else if (pontoDefinitivoFeiticeiro > pontoDefinitivoBardo && pontoDefinitivoFeiticeiro > pontoDefinitivoBruxo && pontoDefinitivoFeiticeiro > pontoDefinitivoClerigo && pontoDefinitivoFeiticeiro > pontoDefinitivoDruida && pontoDefinitivoFeiticeiro > pontoDefinitivoBarbaro && pontoDefinitivoFeiticeiro > pontoDefinitivoGuerreiro && pontoDefinitivoFeiticeiro > pontoDefinitivoLadino && pontoDefinitivoFeiticeiro > pontoDefinitivoMago && pontoDefinitivoFeiticeiro > pontoDefinitivoMonge && pontoDefinitivoFeiticeiro > pontoDefinitivoPatrulheiro && pontoDefinitivoFeiticeiro > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `FEITICEIRO`
+        }
+
+        else if (pontoDefinitivoGuerreiro > pontoDefinitivoBardo && pontoDefinitivoGuerreiro > pontoDefinitivoBruxo && pontoDefinitivoGuerreiro > pontoDefinitivoClerigo && pontoDefinitivoGuerreiro > pontoDefinitivoDruida && pontoDefinitivoGuerreiro > pontoDefinitivoFeiticeiro && pontoDefinitivoGuerreiro > pontoDefinitivoBarbaro && pontoDefinitivoGuerreiro > pontoDefinitivoLadino && pontoDefinitivoGuerreiro > pontoDefinitivoMago && pontoDefinitivoGuerreiro > pontoDefinitivoMonge && pontoDefinitivoGuerreiro > pontoDefinitivoPatrulheiro && pontoDefinitivoGuerreiro > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `GUERREIRO`
+        }
+
+        else if (pontoDefinitivoLadino > pontoDefinitivoBardo && pontoDefinitivoLadino > pontoDefinitivoBruxo && pontoDefinitivoLadino > pontoDefinitivoClerigo && pontoDefinitivoLadino > pontoDefinitivoDruida && pontoDefinitivoLadino > pontoDefinitivoFeiticeiro && pontoDefinitivoLadino > pontoDefinitivoGuerreiro && pontoDefinitivoLadino > pontoDefinitivoBarbaro && pontoDefinitivoLadino > pontoDefinitivoMago && pontoDefinitivoLadino > pontoDefinitivoMonge && pontoDefinitivoLadino > pontoDefinitivoPatrulheiro && pontoDefinitivoLadino > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `LADINO`
+        }
+
+        else if (pontoDefinitivoMago > pontoDefinitivoBardo && pontoDefinitivoMago > pontoDefinitivoBruxo && pontoDefinitivoMago > pontoDefinitivoClerigo && pontoDefinitivoMago > pontoDefinitivoDruida && pontoDefinitivoMago > pontoDefinitivoFeiticeiro && pontoDefinitivoMago > pontoDefinitivoGuerreiro && pontoDefinitivoMago > pontoDefinitivoLadino && pontoDefinitivoMago > pontoDefinitivoBarbaro && pontoDefinitivoMago > pontoDefinitivoMonge && pontoDefinitivoMago > pontoDefinitivoPatrulheiro && pontoDefinitivoMago > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `MAGO`
+        }
+
+        else if (pontoDefinitivoMonge > pontoDefinitivoBardo && pontoDefinitivoMonge > pontoDefinitivoBruxo && pontoDefinitivoMonge > pontoDefinitivoClerigo && pontoDefinitivoMonge > pontoDefinitivoDruida && pontoDefinitivoMonge > pontoDefinitivoFeiticeiro && pontoDefinitivoMonge > pontoDefinitivoGuerreiro && pontoDefinitivoMonge > pontoDefinitivoLadino && pontoDefinitivoMonge > pontoDefinitivoMago && pontoDefinitivoMonge > pontoDefinitivoBarbaro && pontoDefinitivoMonge > pontoDefinitivoPatrulheiro && pontoDefinitivoMonge > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `MONGE`
+        }
+
+        else if (pontoDefinitivoPatrulheiro > pontoDefinitivoBardo && pontoDefinitivoPatrulheiro > pontoDefinitivoBruxo && pontoDefinitivoPatrulheiro > pontoDefinitivoClerigo && pontoDefinitivoPatrulheiro > pontoDefinitivoDruida && pontoDefinitivoPatrulheiro > pontoDefinitivoFeiticeiro && pontoDefinitivoPatrulheiro > pontoDefinitivoGuerreiro && pontoDefinitivoPatrulheiro > pontoDefinitivoLadino && pontoDefinitivoPatrulheiro > pontoDefinitivoMago && pontoDefinitivoPatrulheiro > pontoDefinitivoMonge && pontoDefinitivoPatrulheiro > pontoDefinitivoBarbaro && pontoDefinitivoPatrulheiro > pontoDefinitivoPaladino) {
+            resultado.innerHTML = `PATRULHEIRO`
+        }
+
+        else if (pontoDefinitivoPaladino > pontoDefinitivoBardo && pontoDefinitivoPaladino > pontoDefinitivoBruxo && pontoDefinitivoPaladino > pontoDefinitivoClerigo && pontoDefinitivoPaladino > pontoDefinitivoDruida && pontoDefinitivoPaladino > pontoDefinitivoFeiticeiro && pontoDefinitivoPaladino > pontoDefinitivoGuerreiro && pontoDefinitivoPaladino > pontoDefinitivoLadino && pontoDefinitivoPaladino > pontoDefinitivoMago && pontoDefinitivoPaladino > pontoDefinitivoMonge && pontoDefinitivoPaladino > pontoDefinitivoPatrulheiro && pontoDefinitivoPaladino > pontoDefinitivoBarbaro) {
+            resultado.innerHTML = `PALADINO`
+        }
+
+        else {
+            resultado.innerHTML = `EMPATE`
+        }
+
+
+
+
+
+
+    }
+
+
+
 </script>

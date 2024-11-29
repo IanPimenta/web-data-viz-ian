@@ -109,6 +109,18 @@ body {
     border-radius: 5px;
 }
 
+.espaço-perguntas .caixa-finalizar {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    height: 75%;
+    width: 70%;
+    border-radius: 5px;
+}
+
+
 .espaço-perguntas .caixa-iniciar-raca {
     display: flex;
     flex-direction: column;
@@ -201,7 +213,7 @@ body {
     border-radius: 5px;
     background-color: whitesmoke;
     height: 85%;
-    width: 70%;
+    width: 85%;
     margin-top: 75px;
     align-items: center;
     justify-content: center;
@@ -215,7 +227,7 @@ body {
     border-radius: 5px;
     background-color: whitesmoke;
     height: 85%;
-    width: 70%;
+    width: 85%;
     margin-top: 75px;
     align-items: center;
     justify-content: center;
@@ -229,7 +241,7 @@ body {
     border-radius: 5px;
     background-color: whitesmoke;
     height: 85%;
-    width: 70%;
+    width: 85%;
     margin-top: 75px;
     align-items: center;
     justify-content: center;
@@ -243,7 +255,7 @@ body {
     border-radius: 5px;
     background-color: whitesmoke;
     height: 85%;
-    width: 70%;
+    width: 85%;
     margin-top: 75px;
     align-items: center;
     justify-content: center;
@@ -257,7 +269,7 @@ body {
     border-radius: 5px;
     background-color: whitesmoke;
     height: 85%;
-    width: 70%;
+    width: 85%;
     margin-top: 75px;
     align-items: center;
     justify-content: center;
@@ -268,7 +280,8 @@ body {
 .espaço-perguntas .titulo {
     border-radius: 5px;
     height: 10%;
-    width: 100%;
+    width: 97%;
+    margin-block: 3px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -293,5 +306,10 @@ body {
     justify-content: center;
     align-items: start;
     display: flex;
+    font-size: 18px;
     flex-direction: column;
 }
+
+.selected {
+    background-color: red;
+  }
