@@ -36,7 +36,7 @@
             <div class="titulo">
                 <h3>Quiz de personalidade: Qual classe de Dungeons and Dragons mais combina com você?</h3>
             </div>
-            <div class="botao"><button id="iniciarQuestoes" onclick="mostrarQuestaoAtual()">
+            <div class="botao"><button id="iniciarQuestoes" onclick="avancarQuestao1()">
                     <h3>Descubra!</h3>
                 </button></div>
 
@@ -96,7 +96,7 @@
                         espirituais e mentais.</p>
                 </div>
             </div>
-            <div class="botao"><button id="IrQuestao2" onclick="mostrarQuestaoAtual()">
+            <div class="botao"><button id="IrQuestao2" onclick="avancarQuestao2()">
                     <h3>Prosseguir</h3>
                 </button></div>
         </div>
@@ -143,7 +143,7 @@
                 </div>
 
             </div>
-            <div class="botao"><button id="IrQuestao3" onclick="mostrarQuestaoAtual()">
+            <div class="botao"><button id="IrQuestao3" onclick="avancarQuestao3()">
                     <h3>Prosseguir</h3>
                 </button></div>
         </div>
@@ -194,7 +194,7 @@
                         poderosas.</p>
                 </div>
             </div>
-            <div class="botao"><button id="IrQuestao4" onclick="mostrarQuestaoAtual()">
+            <div class="botao"><button id="IrQuestao4" onclick="avancarQuestao4()">
                     <h3>Prosseguir</h3>
                 </button></div>
         </div>
@@ -247,7 +247,7 @@
                     <p>Se aprimoraria em seus dons mágicos pessoais.</p>
                 </div>
             </div>
-            <div class="botao"><button id="IrQuestao5" onclick="mostrarQuestaoAtual()">
+            <div class="botao"><button id="IrQuestao5" onclick="avancarQuestao5()">
                     <h3>Prosseguir</h3>
                 </button></div>
         </div>
@@ -310,53 +310,6 @@
 </html>
 
 <script>
-
-    //Iniciar Quiz
-    // Selecionando os elementos
-    const inicial = document.getElementById('inicial')
-    const iniciarQuestoes = document.getElementById('iniciarQuestoes');
-    const questao1 = document.getElementById('questao1');
-    const IrQuestao2 = document.getElementById('IrQuestao2');
-    const questao3 = document.getElementById('questao3');
-    const IrQuestao3 = document.getElementById('IrQuestao3');
-    const questao4 = document.getElementById('questao4');
-    const IrQuestao4 = document.getElementById('IrQuestao4');
-    const questao5 = document.getElementById('questao5');
-    const IrQuestao5 = document.getElementById('IrQuestao5');
-    const final = document.getElementById('final');
-    const Finalizar = document.getElementById('Finalizar');
-
-
-    // Função para mostrar a div
-    iniciarQuestoes.addEventListener('click', () => {
-        questao1.style.display = 'flex'; // Torna a div visível
-        inicial.style.display = 'none'
-    });
-
-    IrQuestao2.addEventListener('click', () => {
-        questao2.style.display = 'flex'; // Torna a div visível
-        questao1.style.display = 'none'
-    });
-
-    IrQuestao3.addEventListener('click', () => {
-        questao3.style.display = 'flex'; // Torna a div visível
-        questao2.style.display = 'none'
-    });
-
-    IrQuestao4.addEventListener('click', () => {
-        questao4.style.display = 'flex'; // Torna a div visível
-        questao3.style.display = 'none'
-    });
-
-    IrQuestao5.addEventListener('click', () => {
-        questao5.style.display = 'flex'; // Torna a div visível
-        questao4.style.display = 'none'
-    });
-
-    Finalizar.addEventListener('click', () => {
-        final.style.display = 'flex'; // Torna a div visível
-        questao5.style.display = 'none'
-    });
 
     // Selecionar todas as divs com a classe "item"
     const items = document.querySelectorAll('.questao');
@@ -446,8 +399,105 @@
     var ponto5paladino = 0
 
 
-    function mostrarQuestaoAtual() {
-        questaoAtual += 1
+
+    //Iniciar Quiz
+    // Selecionando os elementos
+    const inicial = document.getElementById('inicial')
+    const iniciarQuestoes = document.getElementById('iniciarQuestoes');
+    const questao1 = document.getElementById('questao1');
+    const IrQuestao2 = document.getElementById('IrQuestao2');
+    const questao3 = document.getElementById('questao3');
+    const IrQuestao3 = document.getElementById('IrQuestao3');
+    const questao4 = document.getElementById('questao4');
+    const IrQuestao4 = document.getElementById('IrQuestao4');
+    const questao5 = document.getElementById('questao5');
+    const IrQuestao5 = document.getElementById('IrQuestao5');
+    const final = document.getElementById('final');
+    const Finalizar = document.getElementById('Finalizar');
+
+
+
+    function avancarQuestao1() {
+        // Função para mostrar a div
+        questao1.style.display = 'flex'; // Torna a div visível
+        inicial.style.display = 'none'
+        questaoAtual = 1
+    }
+
+    function avancarQuestao2() {
+        if (pontobardo == 0
+            && pontobruxo == 0
+            && pontoclerigo == 0
+            && pontodruida == 0
+            && pontofeiticeiro == 0
+            && pontoguerreiro == 0
+            && pontoladino == 0
+            && pontomago == 0
+            && pontomonge == 0
+            && pontopatrulheiro == 0
+            && pontopaladino == 0) {
+            return alert('escolha uma alternativa')
+        }
+        questao2.style.display = 'flex'; // Torna a div visível
+        questao1.style.display = 'none'
+        questaoAtual = 2
+    }
+
+    function avancarQuestao3() {
+        if (ponto2bardo == 0
+            && ponto2bruxo == 0
+            && ponto2clerigo == 0
+            && ponto2druida == 0
+            && ponto2feiticeiro == 0
+            && ponto2guerreiro == 0
+            && ponto2ladino == 0
+            && ponto2mago == 0
+            && ponto2monge == 0
+            && ponto2patrulheiro == 0
+            && ponto2paladino == 0) {
+            return alert('escolha uma alternativa')
+        }
+        questao3.style.display = 'flex'; // Torna a div visível
+        questao2.style.display = 'none'
+        questaoAtual = 3
+    }
+
+    function avancarQuestao4() {
+        if (ponto3bardo == 0
+            && ponto3bruxo == 0
+            && ponto3clerigo == 0
+            && ponto3druida == 0
+            && ponto3feiticeiro == 0
+            && ponto3guerreiro == 0
+            && ponto3ladino == 0
+            && ponto3mago == 0
+            && ponto3monge == 0
+            && ponto3patrulheiro == 0
+            && ponto3paladino == 0) {
+            return alert('escolha uma alternativa')
+        }
+        questao4.style.display = 'flex'; // Torna a div visível
+        questao3.style.display = 'none'
+        questaoAtual = 4
+    }
+
+    function avancarQuestao5() {
+        if (ponto4bardo == 0
+            && ponto4bruxo == 0
+            && ponto4clerigo == 0
+            && ponto4druida == 0
+            && ponto4feiticeiro == 0
+            && ponto4guerreiro == 0
+            && ponto4ladino == 0
+            && ponto4mago == 0
+            && ponto4monge == 0
+            && ponto4patrulheiro == 0
+            && ponto4paladino == 0) {
+            return alert('escolha uma alternativa')
+        }
+        questao5.style.display = 'flex'; // Torna a div visível
+        questao4.style.display = 'none'
+        questaoAtual = 5
     }
 
     function barbaro() {
@@ -1340,6 +1390,23 @@
     }
 
     function finalizar() {
+        if (ponto5bardo == 0
+            && ponto5bruxo == 0
+            && ponto5clerigo == 0
+            && ponto5druida == 0
+            && ponto5feiticeiro == 0
+            && ponto5guerreiro == 0
+            && ponto5ladino == 0
+            && ponto5mago == 0
+            && ponto5monge == 0
+            && ponto5patrulheiro == 0
+            && ponto5paladino == 0) {
+            return alert('escolha uma alternativa')
+        }
+
+        final.style.display = 'flex'; // Torna a div visível
+        questao5.style.display = 'none'
+
         //Pontos Definitivos
         var pontoDefinitivoBarbaro = pontobarbaro + ponto2barbaro + ponto3barbaro + ponto4barbaro + ponto5barbaro
         var pontoDefinitivoBardo = pontobardo + ponto2bardo + ponto3bardo + ponto4bardo + ponto5bardo
@@ -1407,11 +1474,6 @@
         else {
             resultado.innerHTML = `EMPATE`
         }
-
-
-
-
-
 
     }
 
