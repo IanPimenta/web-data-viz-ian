@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.25, user-scalable=no">
     <title>Escudo do Mestre</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="icon" type="image/png" href="imagens/d20 (1).png">
     <!-- <script src="js/script.js"></script> -->
@@ -34,6 +35,22 @@
     </div>
     <div class="espaco-dashboard">
         <div class="graficos">
+            <div class="linha">
+                <div class="barras">
+                    <canvas id="myChart"></canvas>
+                </div>   
+                <div class="pizza">
+                    <canvas id="myChart2"></canvas>
+                </div>   
+            </div>
+            <div class="linha">
+                <div class="barras">
+                    <canvas id="myChart3"></canvas>
+                </div>   
+                <div class="pizza">
+                    <canvas id="myChart4"></canvas>
+                </div>   
+            </div>
 
         </div>
         <div class="kpis">
@@ -42,3 +59,100 @@
             <div class="raca"> sua raça é:</div>
         </div>
     </div>
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const ctx2 = document.getElementById('myChart2');
+    const ctx3 = document.getElementById('myChart3');
+    const ctx4 = document.getElementById('myChart4');
+
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
+            datasets: [{
+                label: 'Quantidade de membros de cada raça',
+                data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
+        datasets: [{
+            label: '# of Votes',
+            data: [1, 1, 1, 1, 1],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                position: 'right',
+            },
+            tooltip: {
+                enabled: true
+            }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: ['Elfo', 'Halfling', 'Anão', 'Humano'],
+            datasets: [{
+                label: 'Quantidade de membros de cada raça',
+                data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    new Chart(ctx4, {
+    type: 'pie',
+    data: {
+        labels: ['Anão', 'Humano', 'Elfo', 'Halfiling'],
+        datasets: [{
+            label: 'Comaptibilidade com cada Raça',
+            data: [12, 19, 3, 5],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                position: 'right',
+            },
+            tooltip: {
+                enabled: true
+            }
+        },
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+</script>
