@@ -34,7 +34,7 @@ body {
 
 .container .navbar {
     display: flex;
-    width: 650px;
+    width: 900px;
     height: 100%;
     flex-direction: row;
     align-items: center;
@@ -46,9 +46,9 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 600px;
+    width: 900px;
     min-width: 450px;
-    color: white;
+    color: black;
     font-size: 15px;
     font-weight: bold;
     padding-left: 20px;

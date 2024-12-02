@@ -86,14 +86,3 @@ body {
     transform: scale(1.2);
     cursor: pointer;
 }
-
-.home {
-    border-top: white solid 66px;
-    width: 100%;
-    height: 550px;
-    background-image: url('imagens/Dungeons\ &\ Códigos.png');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.8);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
