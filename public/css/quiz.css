@@ -91,7 +91,7 @@ body {
 
 .espaço-perguntas {
     background-color: darkred;
-    height: 125vh;
+    height: 110vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -142,7 +142,7 @@ body {
 }
 
 .espaço-perguntas .caixa-iniciar-raca .imagem {
-    background-image: url('../imagens/imgQuiz/2023-dungeons-and-dragons-game-6g-1920x1075.jpg');
+    background-image: url('../imagens/imgQuiz/2023-dungeons-and-dragons-game-6g-1920x1080.jpg');
     background-size: cover;
     border-radius: 5px;
     height: 75%;
@@ -278,6 +278,35 @@ body {
     flex-direction: column;
 }
 
+.espaço-perguntas .questao-6 {
+    display: none;
+    border: solid whitesmoke 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    height: 85%;
+    width: 85%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.espaço-perguntas .questao-7 {
+    display: none;
+    border: solid whitesmoke 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    height: 85%;
+    width: 85%;
+    margin-top: 75px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+
 .espaço-perguntas .titulo {
     border-radius: 5px;
     height: 10%;
@@ -304,10 +333,11 @@ body {
     margin-block: 3px;
     height: 7.5%;
     width: 100%;
+    cursor: pointer;
     justify-content: center;
     align-items: start;
     display: flex;
-    font-size: 16px;
+    font-size: 18px;
     flex-direction: column;
 }
 

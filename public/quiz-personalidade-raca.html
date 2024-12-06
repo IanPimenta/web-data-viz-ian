@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/quiz.css">
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -33,36 +35,271 @@
     <div class="espaço-perguntas">
         <div id="inicial" class="caixa-iniciar-raca">
             <div class="imagem"></div>
-            <div class="titulo"><h3>Quiz de personalidade: Qual raça de Dungeons and Dragons mais combina com você?</h3></div>
-            <div class="botao"><button id="iniciarQuestoes"><h3>Descubra!</h3></button></div>
+            <div class="titulo">
+                <h3>Quiz de personalidade: Qual raça de Dungeons and Dragons mais combina com você?</h3>
+            </div>
+            <div class="botao"><button id="iniciarQuestoes" onclick="avancarQuestao1()">
+                    <h3>Descubra!</h3>
+                </button></div>
 
         </div>
         <div id="questao1" class="questao-1">
-            <div class="titulo"><h3>questão 1</h3></div>
-            <div class="botao"><button id="IrQuestao2"><h3>Prosseguir</h3></button></div>
+            <div class="titulo">
+                <h3>1. Qual qualidade mais se enquadra com você?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="anao()">
+                    <p>Coragem</p>
+                </div>
+                <div class="questao" onclick="elfo()">
+                    <p>Paciência</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Companheirismo</p>
+                </div>
+                <div class="questao" onclick="humano()">
+                    <p>Adaptável</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao2" onclick="avancarQuestao2()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao2" class="questao-2">
-            <div class="titulo"><h3>questão 2</h3></div>
-            <div class="botao"><button id="IrQuestao3"><h3>Prosseguir</h3></button></div>
+            <div class="titulo">
+                <h3>2. Com qual defeito você mais se identifica?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="humano()">
+                    <p>Ambição</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Ingenuidade</p>
+                </div>
+                <div class="questao" onclick="elfo()">
+                    <p>Despreocupação</p>
+                </div>
+                <div class="questao" onclick="anao()">
+                    <p>Impulsividade</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao3" onclick="avancarQuestao3()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao3" class="questao-3">
-            <div class="titulo"><h3>questão 3</h3></div>
-            <div class="botao"><button id="IrQuestao4"><h3>Prosseguir</h3></button></div>
+            <div class="titulo">
+                <h3>3. Qual sua opinião sobre os elfos?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="anao()">
+                    <p>Não é sensato depender dos elfos. É difícil prever o
+                        que um elfo vai fazer a seguir. Quando o martelo encontra a cabeça do orc, eles podem tanto
+                        começar a cantar ou sacar uma espada, ninguém sabe. Eles são volúveis e fúteis.</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Eles são tão belos! Seus rostos, sua música, sua graça e tudo mais. É como se estivessem saído de
+                        um sonho maravilhoso. Mas não há como dizer o que está se passando por trás de sua face
+                        sorridente – certamente muito mais do que eles demonstram.</p>
+                </div>
+                <div class="questao" onclick="humano()">
+                    <p>É melhor não andar pelas florestas dos elfos. Eles não gostam de intrusos, e é provável que você
+                        seja ou enfeitiçado, ou crivado de flechas. Ainda assim, se um elfo puder esquecer esse seu
+                        maldito orgulho racial e realmente tratá-lo como um igual, você pode aprender muito com eles.
+                    </p>
+                </div>
+                <div class="questao" onclick="elfo()">
+                    <p>Nenhuma</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao4" onclick="avancarQuestao4()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
         <div id="questao4" class="questao-4">
-            <div class="titulo"><h3>questão 4</h3></div>
-            <div class="botao"><button id="IrQuestao5"><h3>Prosseguir</h3></button></div>
+            <div class="titulo">
+                <h3>4. Quais locais mais te despertam interesse e que gostaria de morar?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="elfo()">
+                    <p>Florestas</p>
+                </div>
+                <div class="questao" onclick="anao()">
+                    <p>Montanhas</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Campos</p>
+                </div>
+                <div class="questao" onclick="humano()">
+                    <p>Cidades</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao5" onclick="avancarQuestao5()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
+
         <div id="questao5" class="questao-5">
-            <div class="titulo"><h3>questão 5</h3></div>
-            <div class="botao"><button id="Finalizar"><h3>Prosseguir</h3></button></div>
+            <div class="titulo">
+                <h3>5. Qual a sua opinião sobre os anões?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="elfo()" value>
+                    <p>Anões não são nada espertos, broncos desajeitados. Mas o que os falta em humor, sofisticação e
+                        boas maneiras, sobra em bravura. E eu devo admitir, seus melhores ferreiros produzem arte que se
+                        aproxima da qualidade élfica.</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Anões são amigos leais, e você pode confiar em sua palavra. Mas será que machucaria muito sorrir
+                        de vez em quando?</p>
+                </div>
+                <div class="questao" onclick="humano()">
+                    <p>Eles são um povo corajoso, amigos fortes e fiéis à sua palavra. No entanto, sua ganância por ouro
+                        é sua ruína.</p>
+                </div>
+                <div class="questao" onclick="anao()">
+                    <p>Nenhuma</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao6" onclick="avancarQuestao6()">
+                    <h3>Prosseguir</h3>
+                </button></div>
         </div>
-    </div>
+
+        <div id="questao6" class="questao-6">
+            <div class="titulo">
+                <h3>6. Qual sua opinião sobre os Halflings?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="humano()" value>
+                    <p>É difícil haver uma refeição melhor do que aquela na casa de um halfling, contanto que você não
+                        quebre sua cabeça no teto da casa – boa comida e boas histórias diante de uma lareira
+                        acolhedora. Se os halflings tivessem um pingo de ambição, eles poderiam realmente conquistar
+                        alguma coisa.</p>
+                </div>
+                <div class="questao" onclick="elfo()">
+                    <p>Halflings são pessoas de gostos simples e esta não é uma qualidade para se menosprezar. Eles são
+                        boa gente, se preocupam uns com os outros e cuidam de seus jardins, e já se provaram mais durões
+                        do que aparentam quando a necessidade surge.</p>
+                </div>
+                <div class="questao" onclick="anao()">
+                    <p>Claro, eles são gente boa. Mas me mostre um herói halfling. Um império, um exército triunfante.
+                        Até mesmo um tesouro conquistado pelas mãos de um halfling. Nada. Como você pode levá-los a
+                        sério?</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Nenhuma</p>
+                </div>
+            </div>
+            <div class="botao"><button id="IrQuestao7" onclick="avancarQuestao7()">
+                    <h3>Prosseguir</h3>
+                </button></div>
+        </div>
+
+        <div id="questao7" class="questao-7">
+            <div class="titulo">
+                <h3>7. Qual sua opinião sobre os Humanos?</h3>
+            </div>
+            <div class="questoes">
+                <div class="questao" onclick="anao()" value>
+                    <p>Se eles colocam o coração em algo, eles vão atrás, seja o tesouro de um dragão ou o trono de
+                        um império. Essa dedicação é digna de admiração, mesmo que ela os ponha em apuros com muita
+                        frequência.</p>
+                </div>
+                <div class="questao" onclick="elfo()">
+                    <p>Toda aquela pressa, sua ambição e vontade de completar algo antes que suas breves vidas
+                        acabem – os esforços humanos parecem tão fúteis às vezes. Mas então você olha para suas
+                        realizações e tem que apreciar suas façanhas. Se ao menos eles diminuíssem o ritmo e
+                        aprendessem um pouco de requinte.</p>
+                </div>
+                <div class="questao" onclick="halfling()">
+                    <p>Os humanos são realmente muito parecidos com a gente. Pelo menos alguns deles. Saia de seus
+                        castelos e fortalezas, vá conversar com os agricultores e pastores, e você vai encontrar um
+                        povo bom e forte. Não que haja algo de errado com os barões e os soldados – é preciso
+                        admirar a sua convicção. E protegendo suas próprias terras, eles também nos protegem.</p>
+                </div>
+                <div class="questao" onclick="Humano()">
+                    <p>Nenhuma</p>
+                </div>
+            </div>
+            <div class="botao"><button id="Finalizar" onclick="finalizar()">
+                    <h3>Finalizar</h3>
+                </button></div>
+            </div>
+            <div id="final" class="caixa-finalizar">
+                <div class="imagem"></div>
+                <div class="titulo" id="resultado">
+            </div>
+        </div>
 
 </body>
+
 </html>
 
 <script>
+
+    // Selecionar todas as divs com a classe "item"
+    const items = document.querySelectorAll('.questao');
+
+    // Adicionar um evento de clique em cada item
+    items.forEach(questao => {
+        questao.addEventListener('click', function () {
+            // Remover a classe "selected" de todos os itens
+            items.forEach(i => i.classList.remove('selected'));
+
+            // Adicionar a classe "selected" no item clicado
+            this.classList.add('selected');
+        });
+    });
+
+
+    var questaoAtual = 0
+
+    //Questão 1
+    var pontoanao = 0
+    var pontohalfling = 0
+    var pontohumano = 0
+    var pontoelfo = 0
+
+    //Questão 2
+    var ponto2anao = 0
+    var ponto2halfling = 0
+    var ponto2humano = 0
+    var ponto2elfo = 0
+
+    //Questão 3
+    var ponto3anao = 0
+    var ponto3halfling = 0
+    var ponto3humano = 0
+    var ponto3elfo = 0
+
+
+    //Questão 4
+    var ponto4anao = 0
+    var ponto4halfling = 0
+    var ponto4humano = 0
+    var ponto4elfo = 0
+
+    //Questão 5
+    var ponto5anao = 0
+    var ponto5halfling = 0
+    var ponto5humano = 0
+    var ponto5elfo = 0
+
+    //Questão 6
+    var ponto6anao = 0
+    var ponto6halfling = 0
+    var ponto6humano = 0
+    var ponto6elfo = 0
+
+    //Questão 7
+    var ponto7anao = 0
+    var ponto7halfling = 0
+    var ponto7humano = 0
+    var ponto7elfo = 0
+
+
+
     //Iniciar Quiz
     // Selecionando os elementos
     const inicial = document.getElementById('inicial')
@@ -75,31 +312,381 @@
     const IrQuestao4 = document.getElementById('IrQuestao4');
     const questao5 = document.getElementById('questao5');
     const IrQuestao5 = document.getElementById('IrQuestao5');
+    const questao6 = document.getElementById('questao6');
+    const IrQuestao6 = document.getElementById('IrQuestao6');
+    const questao7 = document.getElementById('questao7');
+    const IrQuestao7 = document.getElementById('IrQuestao7');
+    const final = document.getElementById('final');
+    const Finalizar = document.getElementById('Finalizar');
 
 
-    // Função para mostrar a div
-    iniciarQuestoes.addEventListener('click', () => {
+
+    function avancarQuestao1() {
+        // Função para mostrar a div
         questao1.style.display = 'flex'; // Torna a div visível
         inicial.style.display = 'none'
-    });
+        questaoAtual = 1
+    }
 
-    IrQuestao2.addEventListener('click', () => {
+    function avancarQuestao2() {
+        if (pontoanao == 0
+            && pontohalfling == 0
+            && pontohumano == 0
+            && pontoelfo == 0) {
+            return alert('escolha uma alternativa')
+        }
         questao2.style.display = 'flex'; // Torna a div visível
         questao1.style.display = 'none'
-    });
+        questaoAtual = 2
+    }
 
-    IrQuestao3.addEventListener('click', () => {
+    function avancarQuestao3() {
+        if (ponto2anao == 0
+            && ponto2halfling == 0
+            && ponto2humano == 0
+            && ponto2elfo == 0) {
+            return alert('escolha uma alternativa')
+        }
         questao3.style.display = 'flex'; // Torna a div visível
         questao2.style.display = 'none'
-    });
+        questaoAtual = 3
+    }
 
-    IrQuestao4.addEventListener('click', () => {
+    function avancarQuestao4() {
+        if (ponto3anao == 0
+            && ponto3halfling == 0
+            && ponto3humano == 0
+            && ponto3elfo == 0) {
+            return alert('escolha uma alternativa')
+        }
         questao4.style.display = 'flex'; // Torna a div visível
         questao3.style.display = 'none'
-    });
+        questaoAtual = 4
+    }
 
-    IrQuestao5.addEventListener('click', () => {
+    function avancarQuestao5() {
+        if (ponto4anao == 0
+            && ponto4halfling == 0
+            && ponto4humano == 0
+            && ponto4elfo == 0) {
+            return alert('escolha uma alternativa')
+        }
         questao5.style.display = 'flex'; // Torna a div visível
         questao4.style.display = 'none'
-    });
+        questaoAtual = 5
+    }
+
+    function avancarQuestao6() {
+        if (ponto5anao == 0
+            && ponto5halfling == 0
+            && ponto5humano == 0
+            && ponto5elfo == 0) {
+            return alert('escolha uma alternativa')
+        }
+        questao5.style.display = 'none'
+        questao6.style.display = 'flex'; // Torna a div visível
+        questaoAtual = 6
+    }
+
+    function avancarQuestao7() {
+        if (ponto6anao == 0
+            && ponto6halfling == 0
+            && ponto6humano == 0
+            && ponto6elfo == 0) {
+            return alert('escolha uma alternativa')
+        }
+        questao7.style.display = 'flex'; // Torna a div visível
+        questao6.style.display = 'none'
+        questaoAtual = 7
+    }
+
+    function anao() {
+
+        if (questaoAtual == 1) {
+            pontoanao = 1
+            pontohalfling = 0
+            pontohumano = 0
+            pontoelfo = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2anao = 1
+            ponto2halfling = 0
+            ponto2humano = 0
+            ponto2elfo = 0
+        }
+
+        else if (questaoAtual == 3) {
+            ponto3anao = 1
+            ponto3halfling = 0
+            ponto3humano = 0
+            ponto3elfo = 0
+        }
+
+        else if (questaoAtual == 4) {
+            ponto4anao = 1
+            ponto4halfling = 0
+            ponto4humano = 0
+            ponto4elfo = 0
+        }
+
+        else if (questaoAtual == 5) {
+            ponto5anao = 1
+            ponto5halfling = 0
+            ponto5humano = 0
+            ponto5elfo = 0
+        }
+
+        else if (questaoAtual == 6) {
+            ponto6anao = 1
+            ponto6halfling = 0
+            ponto6humano = 0
+            ponto6elfo = 0
+        }
+
+        else {
+            ponto7anao = 1
+            ponto7halfling = 0
+            ponto7humano = 0
+            ponto7elfo = 0
+        }
+    }
+
+    function halfling() {
+
+        if (questaoAtual == 1) {
+            pontoanao = 0
+            pontohalfling = 1
+            pontohumano = 0
+            pontoelfo = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2anao = 0
+            ponto2halfling = 1
+            ponto2humano = 0
+            ponto2elfo = 0
+        }
+
+        else if (questaoAtual == 3) {
+            ponto3anao = 0
+            ponto3halfling = 1
+            ponto3humano = 0
+            ponto3elfo = 0
+        }
+
+        else if (questaoAtual == 4) {
+            ponto4anao = 0
+            ponto4halfling = 1
+            ponto4humano = 0
+            ponto4elfo = 0
+        }
+
+        else if (questaoAtual == 5) {
+            ponto5anao = 0
+            ponto5halfling = 1
+            ponto5humano = 0
+            ponto5elfo = 0
+        }
+
+        else if (questaoAtual == 6) {
+            ponto6anao = 0
+            ponto6halfling = 1
+            ponto6humano = 0
+            ponto6elfo = 0
+        }
+
+        else {
+            ponto7anao = 0
+            ponto7halfling = 1
+            ponto7humano = 0
+            ponto7elfo = 0
+        }
+    }
+
+    function humano() {
+
+        if (questaoAtual == 1) {
+            pontoanao = 0
+            pontohalfling = 0
+            pontohumano = 1
+            pontoelfo = 0
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2anao = 0
+            ponto2halfling = 0
+            ponto2humano = 1
+            ponto2elfo = 0
+        }
+
+        else if (questaoAtual == 3) {
+            ponto3anao = 0
+            ponto3halfling = 0
+            ponto3humano = 1
+            ponto3elfo = 0
+        }
+
+        else if (questaoAtual == 4) {
+            ponto4anao = 0
+            ponto4halfling = 0
+            ponto4humano = 1
+            ponto4elfo = 0
+        }
+
+        else if (questaoAtual == 5) {
+            ponto5anao = 0
+            ponto5halfling = 0
+            ponto5humano = 1
+            ponto5elfo = 0
+        }
+
+        else if (questaoAtual == 6) {
+            ponto6anao = 0
+            ponto6halfling = 0
+            ponto6humano = 1
+            ponto6elfo = 0
+        }
+
+        else {
+            ponto7anao = 0
+            ponto7halfling = 0
+            ponto7humano = 1
+            ponto7elfo = 0
+        }
+    }
+
+    function elfo() {
+
+        if (questaoAtual == 1) {
+            pontoanao = 0
+            pontohalfling = 0
+            pontohumano = 0
+            pontoelfo = 1
+        }
+
+        else if (questaoAtual == 2) {
+            ponto2anao = 0
+            ponto2halfling = 0
+            ponto2humano = 0
+            ponto2elfo = 1
+        }
+
+        else if (questaoAtual == 3) {
+            ponto3anao = 0
+            ponto3halfling = 0
+            ponto3humano = 0
+            ponto3elfo = 1
+        }
+
+        else if (questaoAtual == 4) {
+            ponto4anao = 0
+            ponto4halfling = 0
+            ponto4humano = 0
+            ponto4elfo = 1
+        }
+
+        else if (questaoAtual == 5) {
+            ponto5anao = 0
+            ponto5halfling = 0
+            ponto5humano = 0
+            ponto5elfo = 1
+        }
+
+        else if (questaoAtual == 6) {
+            ponto6anao = 0
+            ponto6halfling = 0
+            ponto6humano = 0
+            ponto6elfo = 1
+        }
+
+        else {
+            ponto7anao = 0
+            ponto7halfling = 0
+            ponto7humano = 0
+            ponto7elfo = 1
+        }
+    }
+
+    var idUsuario = sessionStorage.ID_USUARIO
+
+    function inserirPontosQuizRacaBanco() {
+        fetch("/quizRaca/inserirPontosQuizRacaBanco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuario,
+                pontoDefinitivoAnao,
+                pontoDefinitivoHalfling,
+                pontoDefinitivoHumano,
+                pontoDefinitivoElfo,
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+    var pontoDefinitivoAnao = 0
+    var pontoDefinitivoHalfling = 0
+    var pontoDefinitivoHumano = 0
+    var pontoDefinitivoElfo = 0
+
+    function finalizar() {
+        if (ponto7anao == 0
+            && ponto7halfling == 0
+            && ponto7humano == 0
+            && ponto7elfo == 0) {
+            return alert('escolha uma alternativa')
+        }
+
+        final.style.display = 'flex'; // Torna a div visível
+        questao7.style.display = 'none'
+
+        //Pontos Definitivos
+        pontoDefinitivoAnao = pontoanao + ponto2anao + ponto3anao + ponto4anao + ponto5anao + ponto6anao + ponto7anao
+        pontoDefinitivoHalfling = pontohalfling + ponto2halfling + ponto3halfling + ponto4halfling + ponto5halfling + ponto6halfling + ponto7halfling
+        pontoDefinitivoHumano = pontohumano + ponto2humano + ponto3humano + ponto4humano + ponto5humano + ponto6humano + ponto7humano
+        pontoDefinitivoElfo = pontoelfo + ponto2elfo + ponto3elfo + ponto4elfo + ponto5elfo + ponto6elfo + ponto7elfo
+
+        if (pontoDefinitivoAnao > pontoDefinitivoHalfling && pontoDefinitivoAnao > pontoDefinitivoHumano && pontoDefinitivoAnao > pontoDefinitivoElfo) {
+            resultado.innerHTML = `ANAO`
+        }
+
+        else if (pontoDefinitivoHalfling > pontoDefinitivoAnao && pontoDefinitivoHalfling > pontoDefinitivoHumano && pontoDefinitivoHalfling > pontoDefinitivoElfo) {
+            resultado.innerHTML = `HALFLING`
+
+        }
+
+        else if (pontoDefinitivoHumano > pontoDefinitivoAnao && pontoDefinitivoHumano > pontoDefinitivoHalfling && pontoDefinitivoHumano > pontoDefinitivoElfo) {
+            resultado.innerHTML = `HUMANO`
+
+        }
+
+        else if (pontoDefinitivoElfo > pontoDefinitivoAnao && pontoDefinitivoElfo > pontoDefinitivoHalfling && pontoDefinitivoElfo > pontoDefinitivoHumano) {
+            resultado.innerHTML = `ELFO`
+        }
+
+
+        else {
+            resultado.innerHTML = `EMPATE`
+        }
+
+        inserirPontosQuizRacaBanco()
+    }
+
 </script>
