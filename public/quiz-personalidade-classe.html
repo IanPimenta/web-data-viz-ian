@@ -1395,6 +1395,60 @@
         }
     }
 
+    var idUsuario = sessionStorage.ID_USUARIO
+
+    function inserirPontosQuizBanco() {
+        fetch("/quizClasse/inserirPontosQuizBanco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuario,
+                pontoDefinitivoBarbaro,
+                pontoDefinitivoBardo,
+                pontoDefinitivoBruxo,
+                pontoDefinitivoClerigo,
+                pontoDefinitivoDruida,
+                pontoDefinitivoFeiticeiro,
+                pontoDefinitivoGuerreiro,
+                pontoDefinitivoLadino,
+                pontoDefinitivoMago,
+                pontoDefinitivoMonge,
+                pontoDefinitivoPatrulheiro,
+                pontoDefinitivoPaladino,
+            })
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+    var pontoDefinitivoBarbaro = 0 
+    var pontoDefinitivoBardo = 0
+    var pontoDefinitivoBruxo = 0
+    var pontoDefinitivoClerigo = 0
+    var pontoDefinitivoDruida = 0
+    var pontoDefinitivoFeiticeiro = 0
+    var pontoDefinitivoGuerreiro = 0
+    var pontoDefinitivoLadino = 0
+    var pontoDefinitivoMago = 0
+    var pontoDefinitivoMonge = 0
+    var pontoDefinitivoPatrulheiro = 0
+    var pontoDefinitivoPaladino = 0
+
     function finalizar() {
         if (ponto5bardo == 0
             && ponto5barbaro == 0
@@ -1415,18 +1469,18 @@
         questao5.style.display = 'none'
 
         //Pontos Definitivos
-        var pontoDefinitivoBarbaro = pontobarbaro + ponto2barbaro + ponto3barbaro + ponto4barbaro + ponto5barbaro
-        var pontoDefinitivoBardo = pontobardo + ponto2bardo + ponto3bardo + ponto4bardo + ponto5bardo
-        var pontoDefinitivoBruxo = pontobruxo + ponto2bruxo + ponto3bruxo + ponto4bruxo + ponto5bruxo
-        var pontoDefinitivoClerigo = pontoclerigo + ponto2clerigo + ponto3clerigo + ponto4clerigo + ponto5clerigo
-        var pontoDefinitivoDruida = pontodruida + ponto2druida + ponto3druida + ponto4druida + ponto5druida
-        var pontoDefinitivoFeiticeiro = pontofeiticeiro + ponto2feiticeiro + ponto3feiticeiro + ponto4feiticeiro + ponto5feiticeiro
-        var pontoDefinitivoGuerreiro = pontoguerreiro + ponto2guerreiro + ponto3guerreiro + ponto4guerreiro + ponto5guerreiro
-        var pontoDefinitivoLadino = pontoladino + ponto2ladino + ponto3ladino + ponto4ladino + ponto5ladino
-        var pontoDefinitivoMago = pontomago + ponto2mago + ponto3mago + ponto4mago + ponto5mago
-        var pontoDefinitivoMonge = pontomonge + ponto2monge + ponto3monge + ponto4monge + ponto5monge
-        var pontoDefinitivoPatrulheiro = pontopatrulheiro + ponto2patrulheiro + ponto3patrulheiro + ponto4patrulheiro + ponto5patrulheiro
-        var pontoDefinitivoPaladino = pontopaladino + ponto2paladino + ponto3paladino + ponto4paladino + ponto5paladino
+        pontoDefinitivoBarbaro = pontobarbaro + ponto2barbaro + ponto3barbaro + ponto4barbaro + ponto5barbaro
+        pontoDefinitivoBardo = pontobardo + ponto2bardo + ponto3bardo + ponto4bardo + ponto5bardo
+        pontoDefinitivoBruxo = pontobruxo + ponto2bruxo + ponto3bruxo + ponto4bruxo + ponto5bruxo
+        pontoDefinitivoClerigo = pontoclerigo + ponto2clerigo + ponto3clerigo + ponto4clerigo + ponto5clerigo
+        pontoDefinitivoDruida = pontodruida + ponto2druida + ponto3druida + ponto4druida + ponto5druida
+        pontoDefinitivoFeiticeiro = pontofeiticeiro + ponto2feiticeiro + ponto3feiticeiro + ponto4feiticeiro + ponto5feiticeiro
+        pontoDefinitivoGuerreiro = pontoguerreiro + ponto2guerreiro + ponto3guerreiro + ponto4guerreiro + ponto5guerreiro
+        pontoDefinitivoLadino = pontoladino + ponto2ladino + ponto3ladino + ponto4ladino + ponto5ladino
+        pontoDefinitivoMago = pontomago + ponto2mago + ponto3mago + ponto4mago + ponto5mago
+        pontoDefinitivoMonge = pontomonge + ponto2monge + ponto3monge + ponto4monge + ponto5monge
+        pontoDefinitivoPatrulheiro = pontopatrulheiro + ponto2patrulheiro + ponto3patrulheiro + ponto4patrulheiro + ponto5patrulheiro
+        pontoDefinitivoPaladino = pontopaladino + ponto2paladino + ponto3paladino + ponto4paladino + ponto5paladino
 
         if (pontoDefinitivoBarbaro > pontoDefinitivoBardo && pontoDefinitivoBarbaro > pontoDefinitivoBruxo && pontoDefinitivoBarbaro > pontoDefinitivoClerigo && pontoDefinitivoBarbaro > pontoDefinitivoDruida && pontoDefinitivoBarbaro > pontoDefinitivoFeiticeiro && pontoDefinitivoBarbaro > pontoDefinitivoGuerreiro && pontoDefinitivoBarbaro > pontoDefinitivoLadino && pontoDefinitivoBarbaro > pontoDefinitivoMago && pontoDefinitivoBarbaro > pontoDefinitivoMonge && pontoDefinitivoBarbaro > pontoDefinitivoPatrulheiro && pontoDefinitivoBarbaro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BARBARO`
@@ -1482,6 +1536,7 @@
             resultado.innerHTML = `EMPATE`
         }
 
+        inserirPontosQuizBanco()
     }
 
 </script>
