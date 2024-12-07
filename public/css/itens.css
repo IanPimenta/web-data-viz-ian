@@ -97,3 +97,17 @@ body {
     filter: brightness(0.6);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
+
+.tabelas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('imagens/fundosite.png');
+}
+
+.tabelas img {
+    border-inline: white solid 10px;
+    height: 80%;
+    width: 80%;
+}

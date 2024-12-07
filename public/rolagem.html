@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.25, user-scalable=no">
     <title>Escudo do Mestre</title>
-    <link rel="stylesheet" href="css/racas.css">
+    <link rel="stylesheet" href="css/rolagem.css">
     <link rel="icon" type="image/png" href="imagens/d20 (1).png">
 </head>
 <body>
@@ -33,23 +33,26 @@
             </div>
         </div>
     </div>
-
-    Informe o numero de lados do dado:
-    <select id="select_dados">
-        <option value="4">4</option>
-        <option value="6">6</option>
-        <option value="8">8</option>
-        <option value="10">10</option>
-        <option value="12">12</option>
-        <option value="20">20</option>
-        <option value="100">100</option>
-    </select> <br>
-    Informe quantos dados:
-    <input type="number" id="input_qtd_dados"> <br>
-    Informe o modificador desejável:
-    <input type="number" id="input_modificador"> <br>
-    <div id="mostrarResultado"></div><br>
-    <button onclick="rolarDados()">Rolar Dados!</button>
+    <div class="rolagem">
+        <div class="container">
+            Informe o numero de lados do dado:
+            <select id="select_dados">
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="20">20</option>
+                <option value="100">100</option>
+            </select> <br>
+            Informe quantos dados:
+            <input type="number" id="input_qtd_dados"> <br>
+            Informe o modificador desejável:
+            <input type="number" id="input_modificador"> <br>
+            <div id="mostrarResultado"></div><br>
+            <button onclick="rolarDados()">Rolar Dados!</button>
+        </div>
+    </div>
 </body>
 </html>
 <script>
