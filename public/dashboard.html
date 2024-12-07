@@ -40,27 +40,29 @@
             <div class="linha">
                 <div class="barras">
                     <canvas id="myChart"></canvas>
-                </div>   
+                </div>
                 <div class="pizza">
                     <canvas id="myChart2"></canvas>
-                </div>   
+                </div>
             </div>
             <div class="linha">
                 <div class="barras">
                     <canvas id="myChart3"></canvas>
-                </div>   
+                </div>
                 <div class="pizza">
                     <canvas id="myChart4"></canvas>
-                </div>   
+                </div>
             </div>
 
         </div>
         <div class="kpis">
-            <div class="usuario"> foto e nome do usuario</div>
+            <div style="background-color: ye;" class="usuario"> foto e nome do usuario</div>
             <div class="classe"> sua classe é:</div>
             <div class="raca"> sua raça é:</div>
         </div>
     </div>
+
+
 </body>
 
 <script>
@@ -69,92 +71,164 @@
     const ctx3 = document.getElementById('myChart3');
     const ctx4 = document.getElementById('myChart4');
 
-
     new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
             datasets: [{
-                label: 'Quantidade de membros de cada raça',
-                data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                label: '# of Votes',
+                data: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'orangered', 'plum', 'purple', 'grey', 'greenyellow', 'red',
+                    'brown', 'dimgray', 'dodgerblue', 'cyan', 'green', 'yellow'
+                ],
                 borderWidth: 1
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        generateLabels: function (chart) {
+                            return chart.data.datasets[0].data.map(function (_, index) {
+                                return {
+                                    text: chart.data.labels[index],
+                                    fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                    strokeStyle: chart.data.datasets[0].borderColor || 'white',
+                                    lineWidth: 1
+                                };
+                            });
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
         }
     });
 
     new Chart(ctx2, {
-    type: 'pie',
-    data: {
-        labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
-        datasets: [{
-            label: '# of Votes',
-            data: [1, 1, 1, 1, 1],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                position: 'right',
-            },
-            tooltip: {
-                enabled: true
-            }
+        type: 'pie',
+        data: {
+            labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
+            datasets: [{
+                label: '# of Votes',
+                data: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                backgroundColor: [
+                    'orangered', 'plum', 'purple', 'grey', 'greenyellow', 'red',
+                    'brown', 'dimgray', 'dodgerblue', 'cyan', 'green', 'yellow'
+                ],
+                borderWidth: 1
+            }]
         },
-        responsive: true,
-        maintainAspectRatio: false
-    }
-});
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        generateLabels: function (chart) {
+                            return chart.data.datasets[0].data.map(function (_, index) {
+                                return {
+                                    text: chart.data.labels[index],
+                                    fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                    strokeStyle: chart.data.datasets[0].borderColor || 'white',
+                                    lineWidth: 1
+                                };
+                            });
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
 
 
     new Chart(ctx3, {
         type: 'bar',
         data: {
-            labels: ['Elfo', 'Halfling', 'Anão', 'Humano'],
+            labels: ['Anão', 'Halfling', 'Humano', 'Elfo'],
             datasets: [{
-                label: 'Quantidade de membros de cada raça',
-                data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                label: '# of Votes',
+                data: [5, 4, 3, 2],
+                backgroundColor: [
+                    'brown', 'orange', 'red', 'green'
+                ],
                 borderWidth: 1
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        generateLabels: function (chart) {
+                            return chart.data.datasets[0].data.map(function (_, index) {
+                                return {
+                                    text: chart.data.labels[index],
+                                    fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                    strokeStyle: chart.data.datasets[0].borderColor || 'white',
+                                    lineWidth: 1
+                                };
+                            });
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
         }
     });
 
     new Chart(ctx4, {
-    type: 'pie',
-    data: {
-        labels: ['Anão', 'Humano', 'Elfo', 'Halfiling'],
-        datasets: [{
-            label: 'Comaptibilidade com cada Raça',
-            data: [12, 19, 3, 5],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                position: 'right',
-            },
-            tooltip: {
-                enabled: true
-            }
+        type: 'pie',
+        data: {
+            labels: ['Anão', 'Halfling', 'Humano', 'Elfo'],
+            datasets: [{
+                label: '# of Votes',
+                data: [5, 4, 3, 2],
+                backgroundColor: [
+                    'brown', 'orange', 'red', 'green'
+                ],
+                borderWidth: 1
+            }]
         },
-        responsive: true,
-        maintainAspectRatio: false
-    }
-});
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        generateLabels: function (chart) {
+                            return chart.data.datasets[0].data.map(function (_, index) {
+                                return {
+                                    text: chart.data.labels[index],
+                                    fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                    strokeStyle: chart.data.datasets[0].borderColor || 'white',
+                                    lineWidth: 1
+                                };
+                            });
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
 
 </script>

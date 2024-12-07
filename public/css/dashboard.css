@@ -30,13 +30,13 @@ body {
 }
 
 .header .container img {
-    width: 75px;
-    height: 40px;
+    width: 110px;
+    height: 60px;
 }
 
 .container .navbar {
     display: flex;
-    width: 650px;
+    width: 1000px;
     height: 100%;
     flex-direction: row;
     align-items: center;
@@ -48,13 +48,13 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 600px;
+    width: 900px;
     min-width: 450px;
     color: black;
     font-size: 15px;
     font-weight: bold;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 20px; 
 }
 
 .opcao{
@@ -68,7 +68,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 220px;
     min-width: 220px;
 }
@@ -102,14 +102,15 @@ body {
 
 .espaco-dashboard .graficos {
     margin-top: 5%;
-    height: 90%;
+    height: 80%;
     width: 75%;
+    display: flex;
     flex-direction: column;
 }
 
 .espaco-dashboard .graficos .linha {
     display: flex;
-    margin-left: 10%;
+    margin-left: 2%;
     height: 50%;
     display: flex;
     justify-content: center;
@@ -118,22 +119,29 @@ body {
 }
 
 .espaco-dashboard .graficos .linha .barras {
-    height: 100%;
-    width: 50%;
+    background-color: whitesmoke;
+    border: solid darkred 3px;
+    border-radius: 5px;
+    margin-right: 2px;
+    height: 250px;
+    width: 60%;
 }
+
 .espaco-dashboard .graficos .linha .pizza {
-    display: flex;
-    height: 70%;
-    width: 50%;
+    background-color: whitesmoke;
+    border: solid darkred 3px;
+    border-radius: 5px;
+    height: 250px;
+    width: 40%;
 }
 
 .espaco-dashboard .kpis {
+    margin-top: 5%;
     background-color: darkred;
-    height: 100%;
+    height: 89%;
     width: 25%;
     display: flex;
     flex-direction: column;
-    z-index: 2;
 }
 
 .espaco-dashboard .kpis .usuario{
