@@ -101,7 +101,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
 }
 
@@ -158,25 +157,6 @@ body {
   margin: 0;
 }
 
-.checkbox-container {
-  display: flex;
-  align-items: flex-start;
-  height: 5%;
-  width: 100%;
-  padding-bottom: 15px;
-}
-
-input[type="checkbox"] {
-  margin-right: 8px;
-  height: 20px;
-  width: 20px;
-  align-self: flex-start;
-}
-
-label[for="showPassword"] {
-  font-size: 14px;
-}
-
 .formulario select {
   border: 2px solid #32b9cd;
   background-color: white;
@@ -193,7 +173,7 @@ label[for="showPassword"] {
   justify-content: start;
   height: 20%;
   width: 100%;
-  padding-block: 15px;
+  padding-block: 10px;
 }
 
 .botao {
@@ -207,11 +187,11 @@ label[for="showPassword"] {
   color: #f5f5f5;
   background-color: darkred;
   width: 250px;
-  height: 20%;
+  height: 4vh;
   align-self: center;
 }
 
-.irCadastro p u{
+.irLogin p u{
   cursor: pointer;
   color: darkred;
 }

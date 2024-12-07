@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.25, user-scalable=no">
-    <title>Escudo do Mestre</title>
-    <link rel="stylesheet" href="css/cadastro.css">
-    <link rel="icon" type="image/png" href="imagens/d20 (1).png">
-    <!-- <script src="js/script.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.25, user-scalable=no">
+  <title>Escudo do Mestre</title>
+  <link rel="stylesheet" href="css/cadastro.css">
+  <link rel="icon" type="image/png" href="imagens/d20 (1).png">
+  <!-- <script src="js/script.js"></script> -->
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <img src="imagens/logo.png"></img>
-                </div>
-                <!-- <div class="opcoes">
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="imagens/logo.png"></img>
+        </div>
+        <!-- <div class="opcoes">
                     <a class="opcao" href="indexLogin.html">Home</a>
                     <a class="opcao" href="criacao.html">Ficha</a>
                     <a class="opcao" href="racas.html">Raças</a>
@@ -25,13 +26,13 @@
                     <a class="opcao" href="itens.html">Itens</a>
                     <a class="opcao" href="dashboard.html">Dashboard</a>
                 </div> -->
-            </div>
-            <div class="botoes">
-                <button onclick="window.location.href='login.html'">Login</button>
-                <button onclick="window.location.href='cadastro.html'">Cadastro</button>
-            </div>
-        </div>
+      </div>
+      <div class="botoes">
+        <button onclick="window.location.href='login.html'">Login</button>
+        <button onclick="window.location.href='cadastro.html'">Cadastro</button>
+      </div>
     </div>
+  </div>
 
   <div class="login">
     <div class="alerta_erro">
@@ -68,6 +69,9 @@
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div class="irLogin">
+          <p>Já possui cadastro? <u onclick="window.location.href='login.html'">Entre</u></p>
         </div>
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />

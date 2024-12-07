@@ -2,12 +2,10 @@ body {
     margin: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-
 .header {
     position: fixed;
     display: flex;
-    background-color: whitesmoke;
+    background-color:  whitesmoke;
     flex-direction: row;
     align-items: center;
     width: 100%;
@@ -55,7 +53,7 @@ body {
     padding-right: 20px;
 }
 
-.opcao {
+.opcao{
     display: inline-block;
     transition: transform 0.5s ease;
     text-decoration: none;
@@ -76,7 +74,7 @@ body {
     height: 30px;
     border: 2px solid;
     border-radius: 5px;
-    color: black;
+    color:  black;
     font-size: 16px;
     font-weight: lighter;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
