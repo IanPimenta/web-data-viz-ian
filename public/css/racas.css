@@ -107,30 +107,29 @@ body {
     height: 600px;
     background-image: url('imagens/fundosite.png');
     background-size: cover;
-    font-size: 18px;
     background-position: initial;
     background-position: center;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     display: flex;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-.informacoes .descricao {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 60%;
-    height: 60%;
-    margin-left: auto;
-    margin-right: auto;
+.informacoes .descricao{
+    width: 70%;
+    height: 450px;
+    font-size: 20px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+}
+
+.informacoes .descricao h1{
+    align-self: center;
 }
 
 .informacoes button {
-    background-color: #007bff;
+    background-color: darkred;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -138,6 +137,7 @@ body {
     font-size: 16px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    align-self: center;
 
 }
 
