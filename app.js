@@ -17,6 +17,7 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var quizClasseRouter = require("./src/routes/quizClasse")
+var quizRacaRouter = require("./src/routes/quizRaca")
 var usuarioRouter = require("./src/routes/usuarios");
 
 app.use(express.json());
@@ -27,6 +28,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/quizClasse", quizClasseRouter)
+app.use("/quizRaca", quizRacaRouter)
 app.use("/usuarios", usuarioRouter);
 
 

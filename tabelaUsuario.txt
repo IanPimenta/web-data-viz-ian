@@ -12,3 +12,39 @@ classe varchar(25));
 
 drop table usuarios;
 select * from usuario;
+
+create table quizClasse (
+idClasse int primary key auto_increment,
+pontoBarbaro int,
+pontoBardo int,
+pontoBruxo int,
+pontoClerigo int,
+pontoDruida int,
+pontoFeiticeiro int,
+pontoGuerreiro int,
+pontoLadino int,
+pontoMago int,
+pontoMonge int,
+pontoPatrulheiro int,
+pontoPaladino int,
+fkUsuario int,
+	foreign key (fkUsuario) references usuario (idUsuario)
+);
+
+insert into quizClasse values
+(default, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+
+select * from quizClasse;
+
+create table quizRaca (
+idRaca int primary key auto_increment,
+pontoAnao int,
+pontoHalfling int,
+pontoHumano int,
+pontoElfo int,
+fkUsuario int,
+	foreign key (fkUsuario) references usuario (idUsuario)
+);
+
+select * from quizRaca;
+
