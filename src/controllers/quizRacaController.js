@@ -6,12 +6,14 @@ function inserirPontosQuizRacaBanco(req, res) {
     var pontoDefinitivoHalfling = req.body.pontoDefinitivoHalfling
     var pontoDefinitivoHumano = req.body.pontoDefinitivoHumano
     var pontoDefinitivoElfo = req.body.pontoDefinitivoElfo
+    var raca = req.body.raca
     
     console.log(idUsuario,
         pontoDefinitivoAnao,
         pontoDefinitivoHalfling,
         pontoDefinitivoHumano,
-        pontoDefinitivoElfo,)
+        pontoDefinitivoElfo,
+        raca,)
 
     if (pontoDefinitivoAnao == undefined) {
         res.status(400).send("ponto Anao está undefined!");
@@ -21,6 +23,8 @@ function inserirPontosQuizRacaBanco(req, res) {
         res.status(400).send("ponto Humano está undefined!");
     } else if (pontoDefinitivoElfo == undefined) {
         res.status(400).send("ponto Elfo está undefined!");
+    } else if (raca == undefined) {
+        res.status(400).send("raca está undefined!");
     } else {
 
         quizRacaModel.inserirPontosQuizRacaBanco(
@@ -28,7 +32,8 @@ function inserirPontosQuizRacaBanco(req, res) {
             pontoDefinitivoAnao,
             pontoDefinitivoHalfling,
             pontoDefinitivoHumano,
-            pontoDefinitivoElfo,)
+            pontoDefinitivoElfo,
+            raca,)
             .then(
                 function (resultado) {
 

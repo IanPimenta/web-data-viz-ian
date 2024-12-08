@@ -5,10 +5,11 @@ function inserirPontosQuizRacaBanco(
     pontoDefinitivoAnao,
     pontoDefinitivoHalfling,
     pontoDefinitivoHumano,
-    pontoDefinitivoElfo) {
+    pontoDefinitivoElfo,
+    raca) {
         console.log('Tentando inserir pontuação no banco')
         var instrucaoSql = `insert into quizRaca values
-(default, ${pontoDefinitivoAnao}, ${pontoDefinitivoHalfling}, ${pontoDefinitivoHumano}, ${pontoDefinitivoElfo}, ${idUsuario});`
+(default, ${pontoDefinitivoAnao}, ${pontoDefinitivoHalfling}, ${pontoDefinitivoHumano}, ${pontoDefinitivoElfo}, '${raca}', ${idUsuario});`
 
 return database.executar(instrucaoSql)
 }

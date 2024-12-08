@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="imagens/d20 (1).png">
 </head>
 
-<body>
+<body onload="chamarFuncoes()">
     <div class="header">
         <div class="container">
             <div class="navbar">
@@ -56,9 +56,9 @@
 
         </div>
         <div class="kpis">
-            <div style="background-color: ye;" class="usuario"> foto e nome do usuario</div>
-            <div class="classe"> sua classe é:</div>
-            <div class="raca"> sua raça é:</div>
+            <div id="div_perfil" style="background-color: ye;" class="usuario"> foto e nome do usuario</div>
+            <div id="div_classe" class="classe"></div>
+            <div id="div_raca" class="raca"> sua raça é:</div>
         </div>
     </div>
 
@@ -66,21 +66,175 @@
 </body>
 
 <script>
+    const nomeClasse = []
+    const pontosClasse = []
+    const nomeRaca = []
+    const pontosRaca = []
+    const nomeClasseGeral = []
+    const qtdClasseGeral = []
+    const nomeRacaGeral = []
+
+
     const ctx = document.getElementById('myChart');
     const ctx2 = document.getElementById('myChart2');
     const ctx3 = document.getElementById('myChart3');
     const ctx4 = document.getElementById('myChart4');
 
-    new Chart(ctx, {
+    function chamarFuncoes(){
+        if (sessionStorage.CLASSE_USUARIO == undefined){
+            div_classe.innerHTML = 'Sua classe é: Faça o quiz primeiro'
+        } else {
+            div_classe.innerHTML = `Sua classe é: ${sessionStorage.CLASSE_USUARIO}`
+        }
+
+        if (sessionStorage.RACA_USUARIO == undefined){
+            div_raca.innerHTML = 'Sua raca é: Faça o quiz primeiro'
+        } else {
+            div_raca.innerHTML = `Sua raca é: ${sessionStorage.RACA_USUARIO}`
+        }
+
+        div_perfil.innerHTML = sessionStorage.NOME_USUARIO
+
+        puxarPontosQuizClasse()
+        puxarPontosQuizRaca()
+        puxarQtdClasse()
+    }
+    function puxarPontosQuizClasse() {
+        nomeClasseGeral.splice(0, nomeClasseGeral.length)
+        qtdClasseGeral.splice(0, qtdClasseGeral.length)
+
+        fetch(`/dashboard/puxarPontosQuizClasse/${sessionStorage.ID_USUARIO}`, {
+            method: "GET"
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        if (json[0].pontoBarbaro != 0) {
+                            nomeClasse.push('Barbaro')
+                            pontosClasse.push(json[0].pontoBarbaro)
+                        }
+                        if (json[0].pontoBardo != 0) {
+                            nomeClasse.push('Bardo')
+                            pontosClasse.push(json[0].pontoBardo)
+                        }
+                        if (json[0].pontoBruxo != 0) {
+                            nomeClasse.push('Bruxo')
+                            pontosClasse.push(json[0].pontoBruxo)
+                        }
+                        if (json[0].pontoClerigo != 0) {
+                            nomeClasse.push('Clerigo')
+                            pontosClasse.push(json[0].pontoClerigo)
+                        }
+                        if (json[0].pontoDruida != 0) {
+                            nomeClasse.push('Druida')
+                            pontosClasse.push(json[0].pontoDruida)
+                        }
+                        if (json[0].pontoFeiticeiro != 0) {
+                            nomeClasse.push('Feiticeiro')
+                            pontosClasse.push(json[0].pontoFeiticeiro)
+                        }
+                        if (json[0].pontoGuerreiro != 0) {
+                            nomeClasse.push('Guerreiro')
+                            pontosClasse.push(json[0].pontoGuerreiro)
+                        }
+                        if (json[0].pontoLadino != 0) {
+                            nomeClasse.push('Ladino')
+                            pontosClasse.push(json[0].pontoLadino)
+                        }
+                        if (json[0].pontoMonge != 0) {
+                            nomeClasse.push('Monge')
+                            pontosClasse.push(json[0].pontoMonge)
+                        }
+                        if (json[0].pontoPatrulheiro != 0) {
+                            nomeClasse.push('Patrulheiro')
+                            pontosClasse.push(json[0].pontoPatrulheiro)
+                        }
+                        if (json[0].pontoPaladino != 0) {
+                            nomeClasse.push('Paladino')
+                            pontosClasse.push(json[0].pontoPaladino)
+                        }
+
+                        graficoPontosClassesIndividual.update()
+                    });
+
+                }
+            })
+    }
+
+    function puxarQtdClasse() {
+        nomeClasse.splice(0, nomeClasse.length)
+        pontosClasse.splice(0, pontosClasse.length)
+
+        fetch(`/dashboard/puxarQtdClasse`, {
+            method: "GET"
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        for (var numero = 0; numero < json.length; numero++) {
+                            nomeClasseGeral.push(json[numero].classe)
+                            qtdClasseGeral.push(json[numero].qtdClasse)
+                        }
+
+                        graficoQuantidadeClasse.update()
+                    });
+
+                }
+            })
+    }
+
+    function puxarPontosQuizRaca() {
+        nomeRaca.splice(0, nomeRaca.length)
+        pontosRaca.splice(0, pontosRaca.length)
+
+
+        fetch(`/dashboard/puxarPontosQuizRaca/${sessionStorage.ID_USUARIO}`, {
+            method: "GET"
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        if (json[0].pontoAnao != 0) {
+                            nomeRaca.push('Anao')
+                            pontosRaca.push(json[0].pontoAnao)
+                        }
+                        if (json[0].pontoHalfling != 0) {
+                            nomeRaca.push('Halfling')
+                            pontosRaca.push(json[0].pontoHalfling)
+                        }
+                        if (json[0].pontoHumano != 0) {
+                            nomeRaca.push('Humano')
+                            pontosRaca.push(json[0].pontoHumano)
+                        }
+                        if (json[0].pontoElfo != 0) {
+                            nomeRaca.push('Elfo')
+                            pontosRaca.push(json[0].pontoElfo)
+                        }
+
+                        graficoPontosRacasIndividual.update()
+                    });
+
+                }
+            })
+    }
+
+// nomeVetor.splice(0, nomeVetor.length)
+
+var graficoQuantidadeClasse = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
+            labels: nomeClasseGeral,
             datasets: [{
                 label: '# of Votes',
-                data: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                data: qtdClasseGeral,
                 backgroundColor: [
-                    'orangered', 'plum', 'purple', 'grey', 'greenyellow', 'red',
-                    'brown', 'dimgray', 'dodgerblue', 'cyan', 'green', 'yellow'
+                    'orange', 'plum', 'purple', 'yellow', 'green', 'red', 'white', 'grey', 'darkred', 'darkyellow', 'darkgreen', 'black',
                 ],
                 borderWidth: 1
             }]
@@ -111,13 +265,13 @@
         }
     });
 
-    new Chart(ctx2, {
+var graficoPontosClassesIndividual = new Chart(ctx2, {
         type: 'pie',
         data: {
-            labels: ['Barbaro', 'Bardo', 'Bruxo', 'Clérigo', 'Druida', 'Feiticeiro', 'Guerreiro', 'Ladino', 'Mago', 'Monge', 'Patrulheiro', 'Paladino'],
+            labels: nomeClasse,
             datasets: [{
                 label: '# of Votes',
-                data: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+                data: pontosClasse,
                 backgroundColor: [
                     'orangered', 'plum', 'purple', 'grey', 'greenyellow', 'red',
                     'brown', 'dimgray', 'dodgerblue', 'cyan', 'green', 'yellow'
@@ -192,13 +346,13 @@
         }
     });
 
-    new Chart(ctx4, {
+var graficoPontosRacasIndividual =  new Chart(ctx4, {
         type: 'pie',
         data: {
-            labels: ['Anão', 'Halfling', 'Humano', 'Elfo'],
+            labels: nomeRaca,
             datasets: [{
                 label: '# of Votes',
-                data: [5, 4, 3, 2],
+                data: pontosRaca,
                 backgroundColor: [
                     'brown', 'orange', 'red', 'green'
                 ],
@@ -230,5 +384,4 @@
             maintainAspectRatio: false
         }
     });
-
 </script>

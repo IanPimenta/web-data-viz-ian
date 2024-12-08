@@ -14,19 +14,7 @@ function inserirPontosQuizBanco(req, res) {
     var pontoDefinitivoMonge = req.body.pontoDefinitivoMonge
     var pontoDefinitivoPatrulheiro = req.body.pontoDefinitivoPatrulheiro
     var pontoDefinitivoPaladino = req.body.pontoDefinitivoPaladino
-    console.log(idUsuario,
-        pontoDefinitivoBarbaro,
-        pontoDefinitivoBardo,
-        pontoDefinitivoBruxo,
-        pontoDefinitivoClerigo,
-        pontoDefinitivoDruida,
-        pontoDefinitivoFeiticeiro,
-        pontoDefinitivoGuerreiro,
-        pontoDefinitivoLadino,
-        pontoDefinitivoMago,
-        pontoDefinitivoMonge,
-        pontoDefinitivoPatrulheiro,
-        pontoDefinitivoPaladino,)
+    var classe = req.body.classe
 
     if (pontoDefinitivoBarbaro == undefined) {
         res.status(400).send("ponto barbaro está undefined!");
@@ -52,6 +40,8 @@ function inserirPontosQuizBanco(req, res) {
         res.status(400).send("ponto patrulheiro está undefined!");
     } else if (pontoDefinitivoPaladino == undefined) {
         res.status(400).send("ponto paladino está undefined!");
+    } else if (classe == undefined) {
+        res.status(400).send("classe está undefined!");
     } else {
 
         quizClasseModel.inserirPontosQuizBanco(
@@ -67,7 +57,8 @@ function inserirPontosQuizBanco(req, res) {
             pontoDefinitivoMago,
             pontoDefinitivoMonge,
             pontoDefinitivoPatrulheiro,
-            pontoDefinitivoPaladino,)
+            pontoDefinitivoPaladino,
+            classe,)
             .then(
                 function (resultado) {
 

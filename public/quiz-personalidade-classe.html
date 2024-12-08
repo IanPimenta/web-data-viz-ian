@@ -1418,6 +1418,7 @@
                 pontoDefinitivoMonge,
                 pontoDefinitivoPatrulheiro,
                 pontoDefinitivoPaladino,
+                classe,
             })
         }).then(function (resposta) {
 
@@ -1449,6 +1450,7 @@
     var pontoDefinitivoMonge = 0
     var pontoDefinitivoPatrulheiro = 0
     var pontoDefinitivoPaladino = 0
+    var classe = ``
 
     function finalizar() {
         if (ponto5bardo == 0
@@ -1485,58 +1487,70 @@
 
         if (pontoDefinitivoBarbaro > pontoDefinitivoBardo && pontoDefinitivoBarbaro > pontoDefinitivoBruxo && pontoDefinitivoBarbaro > pontoDefinitivoClerigo && pontoDefinitivoBarbaro > pontoDefinitivoDruida && pontoDefinitivoBarbaro > pontoDefinitivoFeiticeiro && pontoDefinitivoBarbaro > pontoDefinitivoGuerreiro && pontoDefinitivoBarbaro > pontoDefinitivoLadino && pontoDefinitivoBarbaro > pontoDefinitivoMago && pontoDefinitivoBarbaro > pontoDefinitivoMonge && pontoDefinitivoBarbaro > pontoDefinitivoPatrulheiro && pontoDefinitivoBarbaro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BARBARO`
+            classe = `BARBARO`
         }
 
         else if (pontoDefinitivoBardo > pontoDefinitivoBarbaro && pontoDefinitivoBardo > pontoDefinitivoBruxo && pontoDefinitivoBardo > pontoDefinitivoClerigo && pontoDefinitivoBardo > pontoDefinitivoDruida && pontoDefinitivoBardo > pontoDefinitivoFeiticeiro && pontoDefinitivoBardo > pontoDefinitivoGuerreiro && pontoDefinitivoBardo > pontoDefinitivoLadino && pontoDefinitivoBardo > pontoDefinitivoMago && pontoDefinitivoBardo > pontoDefinitivoMonge && pontoDefinitivoBardo > pontoDefinitivoPatrulheiro && pontoDefinitivoBardo > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BARDO`
-
+            classe = `BARDO`
         }
 
         else if (pontoDefinitivoBruxo > pontoDefinitivoBardo && pontoDefinitivoBruxo > pontoDefinitivoBarbaro && pontoDefinitivoBruxo > pontoDefinitivoClerigo && pontoDefinitivoBruxo > pontoDefinitivoDruida && pontoDefinitivoBruxo > pontoDefinitivoFeiticeiro && pontoDefinitivoBruxo > pontoDefinitivoGuerreiro && pontoDefinitivoBruxo > pontoDefinitivoLadino && pontoDefinitivoBruxo > pontoDefinitivoMago && pontoDefinitivoBruxo > pontoDefinitivoMonge && pontoDefinitivoBruxo > pontoDefinitivoPatrulheiro && pontoDefinitivoBruxo > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BRUXO`
-
+            classe = `BRUXO`
         }
 
         else if (pontoDefinitivoClerigo > pontoDefinitivoBardo && pontoDefinitivoClerigo > pontoDefinitivoBruxo && pontoDefinitivoClerigo > pontoDefinitivoBarbaro && pontoDefinitivoClerigo > pontoDefinitivoDruida && pontoDefinitivoClerigo > pontoDefinitivoFeiticeiro && pontoDefinitivoClerigo > pontoDefinitivoGuerreiro && pontoDefinitivoClerigo > pontoDefinitivoLadino && pontoDefinitivoClerigo > pontoDefinitivoMago && pontoDefinitivoClerigo > pontoDefinitivoMonge && pontoDefinitivoClerigo > pontoDefinitivoPatrulheiro && pontoDefinitivoClerigo > pontoDefinitivoPaladino) {
             resultado.innerHTML = `CLERIGO`
+            classe = `CLERIGO`
         }
 
         else if (pontoDefinitivoDruida > pontoDefinitivoBardo && pontoDefinitivoDruida > pontoDefinitivoBruxo && pontoDefinitivoDruida > pontoDefinitivoClerigo && pontoDefinitivoDruida > pontoDefinitivoBarbaro && pontoDefinitivoDruida > pontoDefinitivoFeiticeiro && pontoDefinitivoDruida > pontoDefinitivoGuerreiro && pontoDefinitivoDruida > pontoDefinitivoLadino && pontoDefinitivoDruida > pontoDefinitivoMago && pontoDefinitivoDruida > pontoDefinitivoMonge && pontoDefinitivoDruida > pontoDefinitivoPatrulheiro && pontoDefinitivoDruida > pontoDefinitivoPaladino) {
             resultado.innerHTML = `DRUIDA`
+            classe = `DRUIDA`
         }
 
         else if (pontoDefinitivoFeiticeiro > pontoDefinitivoBardo && pontoDefinitivoFeiticeiro > pontoDefinitivoBruxo && pontoDefinitivoFeiticeiro > pontoDefinitivoClerigo && pontoDefinitivoFeiticeiro > pontoDefinitivoDruida && pontoDefinitivoFeiticeiro > pontoDefinitivoBarbaro && pontoDefinitivoFeiticeiro > pontoDefinitivoGuerreiro && pontoDefinitivoFeiticeiro > pontoDefinitivoLadino && pontoDefinitivoFeiticeiro > pontoDefinitivoMago && pontoDefinitivoFeiticeiro > pontoDefinitivoMonge && pontoDefinitivoFeiticeiro > pontoDefinitivoPatrulheiro && pontoDefinitivoFeiticeiro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `FEITICEIRO`
+            classe = `FEITICEIRO`
         }
 
         else if (pontoDefinitivoGuerreiro > pontoDefinitivoBardo && pontoDefinitivoGuerreiro > pontoDefinitivoBruxo && pontoDefinitivoGuerreiro > pontoDefinitivoClerigo && pontoDefinitivoGuerreiro > pontoDefinitivoDruida && pontoDefinitivoGuerreiro > pontoDefinitivoFeiticeiro && pontoDefinitivoGuerreiro > pontoDefinitivoBarbaro && pontoDefinitivoGuerreiro > pontoDefinitivoLadino && pontoDefinitivoGuerreiro > pontoDefinitivoMago && pontoDefinitivoGuerreiro > pontoDefinitivoMonge && pontoDefinitivoGuerreiro > pontoDefinitivoPatrulheiro && pontoDefinitivoGuerreiro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `GUERREIRO`
+            classe = `GUERREIRO`
         }
 
         else if (pontoDefinitivoLadino > pontoDefinitivoBardo && pontoDefinitivoLadino > pontoDefinitivoBruxo && pontoDefinitivoLadino > pontoDefinitivoClerigo && pontoDefinitivoLadino > pontoDefinitivoDruida && pontoDefinitivoLadino > pontoDefinitivoFeiticeiro && pontoDefinitivoLadino > pontoDefinitivoGuerreiro && pontoDefinitivoLadino > pontoDefinitivoBarbaro && pontoDefinitivoLadino > pontoDefinitivoMago && pontoDefinitivoLadino > pontoDefinitivoMonge && pontoDefinitivoLadino > pontoDefinitivoPatrulheiro && pontoDefinitivoLadino > pontoDefinitivoPaladino) {
             resultado.innerHTML = `LADINO`
+            classe = `LADINO`
         }
 
         else if (pontoDefinitivoMago > pontoDefinitivoBardo && pontoDefinitivoMago > pontoDefinitivoBruxo && pontoDefinitivoMago > pontoDefinitivoClerigo && pontoDefinitivoMago > pontoDefinitivoDruida && pontoDefinitivoMago > pontoDefinitivoFeiticeiro && pontoDefinitivoMago > pontoDefinitivoGuerreiro && pontoDefinitivoMago > pontoDefinitivoLadino && pontoDefinitivoMago > pontoDefinitivoBarbaro && pontoDefinitivoMago > pontoDefinitivoMonge && pontoDefinitivoMago > pontoDefinitivoPatrulheiro && pontoDefinitivoMago > pontoDefinitivoPaladino) {
             resultado.innerHTML = `MAGO`
+            classe = `MAGO`
         }
 
         else if (pontoDefinitivoMonge > pontoDefinitivoBardo && pontoDefinitivoMonge > pontoDefinitivoBruxo && pontoDefinitivoMonge > pontoDefinitivoClerigo && pontoDefinitivoMonge > pontoDefinitivoDruida && pontoDefinitivoMonge > pontoDefinitivoFeiticeiro && pontoDefinitivoMonge > pontoDefinitivoGuerreiro && pontoDefinitivoMonge > pontoDefinitivoLadino && pontoDefinitivoMonge > pontoDefinitivoMago && pontoDefinitivoMonge > pontoDefinitivoBarbaro && pontoDefinitivoMonge > pontoDefinitivoPatrulheiro && pontoDefinitivoMonge > pontoDefinitivoPaladino) {
             resultado.innerHTML = `MONGE`
+            classe = `MONGE`
         }
 
         else if (pontoDefinitivoPatrulheiro > pontoDefinitivoBardo && pontoDefinitivoPatrulheiro > pontoDefinitivoBruxo && pontoDefinitivoPatrulheiro > pontoDefinitivoClerigo && pontoDefinitivoPatrulheiro > pontoDefinitivoDruida && pontoDefinitivoPatrulheiro > pontoDefinitivoFeiticeiro && pontoDefinitivoPatrulheiro > pontoDefinitivoGuerreiro && pontoDefinitivoPatrulheiro > pontoDefinitivoLadino && pontoDefinitivoPatrulheiro > pontoDefinitivoMago && pontoDefinitivoPatrulheiro > pontoDefinitivoMonge && pontoDefinitivoPatrulheiro > pontoDefinitivoBarbaro && pontoDefinitivoPatrulheiro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `PATRULHEIRO`
+            classe = `PATRULHEIRO`
         }
 
         else if (pontoDefinitivoPaladino > pontoDefinitivoBardo && pontoDefinitivoPaladino > pontoDefinitivoBruxo && pontoDefinitivoPaladino > pontoDefinitivoClerigo && pontoDefinitivoPaladino > pontoDefinitivoDruida && pontoDefinitivoPaladino > pontoDefinitivoFeiticeiro && pontoDefinitivoPaladino > pontoDefinitivoGuerreiro && pontoDefinitivoPaladino > pontoDefinitivoLadino && pontoDefinitivoPaladino > pontoDefinitivoMago && pontoDefinitivoPaladino > pontoDefinitivoMonge && pontoDefinitivoPaladino > pontoDefinitivoPatrulheiro && pontoDefinitivoPaladino > pontoDefinitivoBarbaro) {
             resultado.innerHTML = `PALADINO`
+            classe = `PALADINO`
         }
 
         else {
             resultado.innerHTML = `EMPATE`
+            classe = 'MULTICLASSE'
         }
 
+        sessionStorage.CLASSE_USUARIO = classe
         inserirPontosQuizBanco()
     }
 
