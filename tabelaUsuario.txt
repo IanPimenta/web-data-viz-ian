@@ -10,9 +10,6 @@ senha varchar(24),
 raca varchar(25),
 classe varchar(25));
 
-drop table usuarios;
-select * from usuario;
-
 create table quizClasse (
 idClasse int primary key auto_increment,
 pontoBarbaro int,
@@ -27,6 +24,7 @@ pontoMago int,
 pontoMonge int,
 pontoPatrulheiro int,
 pontoPaladino int,
+classe varchar(45),
 fkUsuario int,
 	foreign key (fkUsuario) references usuario (idUsuario)
 );
@@ -42,9 +40,25 @@ pontoAnao int,
 pontoHalfling int,
 pontoHumano int,
 pontoElfo int,
+raca varchar(45),
 fkUsuario int,
 	foreign key (fkUsuario) references usuario (idUsuario)
 );
-
-select * from quizRaca;
+ 
+select pontoBarbaro,
+pontoBardo,
+pontoBruxo,
+pontoClerigo,
+pontoDruida,
+pontoFeiticeiro,
+pontoGuerreiro,
+pontoLadino,
+pontoMago,
+pontoMonge,
+pontoPatrulheiro,
+pontoPaladino,
+classe
+	from quizClasse
+	where fkUsuario = 1;
+    
 
