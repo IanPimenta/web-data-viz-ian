@@ -40,6 +40,15 @@ function puxarQtdClasse() {
     return database.executar(instrucaoSql)
 }
 
+function puxarQtdRaca() {
+    console.log('Tentando puxar pontuação qtdRaca no banco')
+    var instrucaoSql = `select count(raca) as qtdRaca, raca from quizRaca group by raca order by qtdRaca desc;`
+
+    return database.executar(instrucaoSql)
+}
+
 module.exports = { puxarPontosQuizClasse,
-     puxarPontosQuizRaca,
-     puxarQtdClasse }
+    puxarPontosQuizRaca,
+    puxarQtdClasse,
+    puxarQtdRaca
+}

@@ -73,6 +73,8 @@
     const nomeClasseGeral = []
     const qtdClasseGeral = []
     const nomeRacaGeral = []
+    const qtdRacaGeral = []
+
 
 
     const ctx = document.getElementById('myChart');
@@ -80,14 +82,14 @@
     const ctx3 = document.getElementById('myChart3');
     const ctx4 = document.getElementById('myChart4');
 
-    function chamarFuncoes(){
-        if (sessionStorage.CLASSE_USUARIO == undefined){
+    function chamarFuncoes() {
+        if (sessionStorage.CLASSE_USUARIO == undefined) {
             div_classe.innerHTML = 'Sua classe é: Faça o quiz primeiro'
         } else {
             div_classe.innerHTML = `Sua classe é: ${sessionStorage.CLASSE_USUARIO}`
         }
 
-        if (sessionStorage.RACA_USUARIO == undefined){
+        if (sessionStorage.RACA_USUARIO == undefined) {
             div_raca.innerHTML = 'Sua raca é: Faça o quiz primeiro'
         } else {
             div_raca.innerHTML = `Sua raca é: ${sessionStorage.RACA_USUARIO}`
@@ -98,10 +100,11 @@
         puxarPontosQuizClasse()
         puxarPontosQuizRaca()
         puxarQtdClasse()
+        puxarQtdRaca()
     }
     function puxarPontosQuizClasse() {
-        nomeClasseGeral.splice(0, nomeClasseGeral.length)
-        qtdClasseGeral.splice(0, qtdClasseGeral.length)
+        nomeClasse.splice(0, nomeClasse.length)
+        pontosClasse.splice(0, pontosClasse.length)
 
         fetch(`/dashboard/puxarPontosQuizClasse/${sessionStorage.ID_USUARIO}`, {
             method: "GET"
@@ -164,8 +167,8 @@
     }
 
     function puxarQtdClasse() {
-        nomeClasse.splice(0, nomeClasse.length)
-        pontosClasse.splice(0, pontosClasse.length)
+        nomeClasseGeral.splice(0, nomeClasseGeral.length)
+        qtdClasseGeral.splice(0, qtdClasseGeral.length)
 
         fetch(`/dashboard/puxarQtdClasse`, {
             method: "GET"
@@ -224,9 +227,33 @@
             })
     }
 
-// nomeVetor.splice(0, nomeVetor.length)
+    function puxarQtdRaca() {
+        nomeRacaGeral.splice(0, nomeRacaGeral.length)
+        qtdRacaGeral.splice(0, qtdRacaGeral.length)
 
-var graficoQuantidadeClasse = new Chart(ctx, {
+        fetch(`/dashboard/puxarQtdRaca`, {
+            method: "GET"
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        for (var numero = 0; numero < json.length; numero++) {
+                            nomeRacaGeral.push(json[numero].raca)
+                            qtdRacaGeral.push(json[numero].qtdRaca)
+                        }
+
+                        graficoQuantidadeRaca.update()
+                    });
+
+                }
+            })
+    }
+
+    // nomeVetor.splice(0, nomeVetor.length)
+
+    var graficoQuantidadeClasse = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: nomeClasseGeral,
@@ -265,7 +292,7 @@ var graficoQuantidadeClasse = new Chart(ctx, {
         }
     });
 
-var graficoPontosClassesIndividual = new Chart(ctx2, {
+    var graficoPontosClassesIndividual = new Chart(ctx2, {
         type: 'pie',
         data: {
             labels: nomeClasse,
@@ -307,13 +334,13 @@ var graficoPontosClassesIndividual = new Chart(ctx2, {
 
 
 
-    new Chart(ctx3, {
+    var graficoQuantidadeRaca = new Chart(ctx3, {
         type: 'bar',
         data: {
-            labels: ['Anão', 'Halfling', 'Humano', 'Elfo'],
+            labels: nomeRacaGeral,
             datasets: [{
                 label: '# of Votes',
-                data: [5, 4, 3, 2],
+                data: qtdRacaGeral,
                 backgroundColor: [
                     'brown', 'orange', 'red', 'green'
                 ],
@@ -346,7 +373,7 @@ var graficoPontosClassesIndividual = new Chart(ctx2, {
         }
     });
 
-var graficoPontosRacasIndividual =  new Chart(ctx4, {
+    var graficoPontosRacasIndividual = new Chart(ctx4, {
         type: 'pie',
         data: {
             labels: nomeRaca,

@@ -15,4 +15,8 @@ router.get("/puxarQtdClasse", function (req, res) {
     dashboardController.puxarQtdClasse(req, res);
 });
 
+router.get("/puxarQtdRaca", function (req, res) {
+    dashboardController.puxarQtdRaca(req, res);
+});
+
 module.exports = router;

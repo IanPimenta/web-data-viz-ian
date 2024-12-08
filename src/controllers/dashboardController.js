@@ -85,9 +85,34 @@ function puxarQtdClasse(req, res) {
         );
 }
 
+function puxarQtdRaca(req, res) {
+
+    dashboardModel.puxarQtdRaca()
+        .then(
+            function (resultado) {
+
+                if (resultado.length >= 1) {
+                    console.log(resultado);
+
+                    res.json(resultado)
+
+                } else {
+                    res.status(403).send("Puxar qtd Raca inválido(s)");
+                }
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro no select de qtdRaca: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 
 module.exports = {
     puxarPontosQuizClasse, 
     puxarPontosQuizRaca, 
-    puxarQtdClasse
+    puxarQtdClasse,
+    puxarQtdRaca
 }
