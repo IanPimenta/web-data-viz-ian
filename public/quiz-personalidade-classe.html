@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.25, user-scalable=no">
+    <title>Escudo do Mestre</title>
     <link rel="stylesheet" href="css/quizClasse.css">
+    <link rel="icon" type="image/png" href="imagens/d20 (1).png">
+    <!-- <script src="js/script.js"></script> -->
 </head>
-
 <body>
     <div class="header">
         <div class="container">
@@ -302,8 +302,8 @@
                 </button></div>
         </div>
         <div id="final" class="caixa-finalizar">
-            <div class="imagem"></div>
-            <div class="titulo" id="resultado">
+            <div id="div_imagem" class="imagem"></div>
+            <div id="resultado" class="titulo">
             </div>
         </div>
     </div>
@@ -1487,66 +1487,79 @@
 
         if (pontoDefinitivoBarbaro > pontoDefinitivoBardo && pontoDefinitivoBarbaro > pontoDefinitivoBruxo && pontoDefinitivoBarbaro > pontoDefinitivoClerigo && pontoDefinitivoBarbaro > pontoDefinitivoDruida && pontoDefinitivoBarbaro > pontoDefinitivoFeiticeiro && pontoDefinitivoBarbaro > pontoDefinitivoGuerreiro && pontoDefinitivoBarbaro > pontoDefinitivoLadino && pontoDefinitivoBarbaro > pontoDefinitivoMago && pontoDefinitivoBarbaro > pontoDefinitivoMonge && pontoDefinitivoBarbaro > pontoDefinitivoPatrulheiro && pontoDefinitivoBarbaro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BARBARO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/barbaro.png">`
             classe = `BARBARO`
         }
 
         else if (pontoDefinitivoBardo > pontoDefinitivoBarbaro && pontoDefinitivoBardo > pontoDefinitivoBruxo && pontoDefinitivoBardo > pontoDefinitivoClerigo && pontoDefinitivoBardo > pontoDefinitivoDruida && pontoDefinitivoBardo > pontoDefinitivoFeiticeiro && pontoDefinitivoBardo > pontoDefinitivoGuerreiro && pontoDefinitivoBardo > pontoDefinitivoLadino && pontoDefinitivoBardo > pontoDefinitivoMago && pontoDefinitivoBardo > pontoDefinitivoMonge && pontoDefinitivoBardo > pontoDefinitivoPatrulheiro && pontoDefinitivoBardo > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BARDO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/bardo.png"> ` 
             classe = `BARDO`
         }
 
         else if (pontoDefinitivoBruxo > pontoDefinitivoBardo && pontoDefinitivoBruxo > pontoDefinitivoBarbaro && pontoDefinitivoBruxo > pontoDefinitivoClerigo && pontoDefinitivoBruxo > pontoDefinitivoDruida && pontoDefinitivoBruxo > pontoDefinitivoFeiticeiro && pontoDefinitivoBruxo > pontoDefinitivoGuerreiro && pontoDefinitivoBruxo > pontoDefinitivoLadino && pontoDefinitivoBruxo > pontoDefinitivoMago && pontoDefinitivoBruxo > pontoDefinitivoMonge && pontoDefinitivoBruxo > pontoDefinitivoPatrulheiro && pontoDefinitivoBruxo > pontoDefinitivoPaladino) {
             resultado.innerHTML = `BRUXO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/bruxo.png">  ` 
             classe = `BRUXO`
         }
 
         else if (pontoDefinitivoClerigo > pontoDefinitivoBardo && pontoDefinitivoClerigo > pontoDefinitivoBruxo && pontoDefinitivoClerigo > pontoDefinitivoBarbaro && pontoDefinitivoClerigo > pontoDefinitivoDruida && pontoDefinitivoClerigo > pontoDefinitivoFeiticeiro && pontoDefinitivoClerigo > pontoDefinitivoGuerreiro && pontoDefinitivoClerigo > pontoDefinitivoLadino && pontoDefinitivoClerigo > pontoDefinitivoMago && pontoDefinitivoClerigo > pontoDefinitivoMonge && pontoDefinitivoClerigo > pontoDefinitivoPatrulheiro && pontoDefinitivoClerigo > pontoDefinitivoPaladino) {
             resultado.innerHTML = `CLERIGO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/clerigo.png">  ` 
             classe = `CLERIGO`
         }
 
         else if (pontoDefinitivoDruida > pontoDefinitivoBardo && pontoDefinitivoDruida > pontoDefinitivoBruxo && pontoDefinitivoDruida > pontoDefinitivoClerigo && pontoDefinitivoDruida > pontoDefinitivoBarbaro && pontoDefinitivoDruida > pontoDefinitivoFeiticeiro && pontoDefinitivoDruida > pontoDefinitivoGuerreiro && pontoDefinitivoDruida > pontoDefinitivoLadino && pontoDefinitivoDruida > pontoDefinitivoMago && pontoDefinitivoDruida > pontoDefinitivoMonge && pontoDefinitivoDruida > pontoDefinitivoPatrulheiro && pontoDefinitivoDruida > pontoDefinitivoPaladino) {
             resultado.innerHTML = `DRUIDA`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/druida.png">` 
             classe = `DRUIDA`
         }
 
         else if (pontoDefinitivoFeiticeiro > pontoDefinitivoBardo && pontoDefinitivoFeiticeiro > pontoDefinitivoBruxo && pontoDefinitivoFeiticeiro > pontoDefinitivoClerigo && pontoDefinitivoFeiticeiro > pontoDefinitivoDruida && pontoDefinitivoFeiticeiro > pontoDefinitivoBarbaro && pontoDefinitivoFeiticeiro > pontoDefinitivoGuerreiro && pontoDefinitivoFeiticeiro > pontoDefinitivoLadino && pontoDefinitivoFeiticeiro > pontoDefinitivoMago && pontoDefinitivoFeiticeiro > pontoDefinitivoMonge && pontoDefinitivoFeiticeiro > pontoDefinitivoPatrulheiro && pontoDefinitivoFeiticeiro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `FEITICEIRO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/feiticeiro.png">` 
             classe = `FEITICEIRO`
         }
 
         else if (pontoDefinitivoGuerreiro > pontoDefinitivoBardo && pontoDefinitivoGuerreiro > pontoDefinitivoBruxo && pontoDefinitivoGuerreiro > pontoDefinitivoClerigo && pontoDefinitivoGuerreiro > pontoDefinitivoDruida && pontoDefinitivoGuerreiro > pontoDefinitivoFeiticeiro && pontoDefinitivoGuerreiro > pontoDefinitivoBarbaro && pontoDefinitivoGuerreiro > pontoDefinitivoLadino && pontoDefinitivoGuerreiro > pontoDefinitivoMago && pontoDefinitivoGuerreiro > pontoDefinitivoMonge && pontoDefinitivoGuerreiro > pontoDefinitivoPatrulheiro && pontoDefinitivoGuerreiro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `GUERREIRO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/guerreiro.png">` 
             classe = `GUERREIRO`
         }
 
         else if (pontoDefinitivoLadino > pontoDefinitivoBardo && pontoDefinitivoLadino > pontoDefinitivoBruxo && pontoDefinitivoLadino > pontoDefinitivoClerigo && pontoDefinitivoLadino > pontoDefinitivoDruida && pontoDefinitivoLadino > pontoDefinitivoFeiticeiro && pontoDefinitivoLadino > pontoDefinitivoGuerreiro && pontoDefinitivoLadino > pontoDefinitivoBarbaro && pontoDefinitivoLadino > pontoDefinitivoMago && pontoDefinitivoLadino > pontoDefinitivoMonge && pontoDefinitivoLadino > pontoDefinitivoPatrulheiro && pontoDefinitivoLadino > pontoDefinitivoPaladino) {
             resultado.innerHTML = `LADINO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/ladino.png">` 
             classe = `LADINO`
         }
 
         else if (pontoDefinitivoMago > pontoDefinitivoBardo && pontoDefinitivoMago > pontoDefinitivoBruxo && pontoDefinitivoMago > pontoDefinitivoClerigo && pontoDefinitivoMago > pontoDefinitivoDruida && pontoDefinitivoMago > pontoDefinitivoFeiticeiro && pontoDefinitivoMago > pontoDefinitivoGuerreiro && pontoDefinitivoMago > pontoDefinitivoLadino && pontoDefinitivoMago > pontoDefinitivoBarbaro && pontoDefinitivoMago > pontoDefinitivoMonge && pontoDefinitivoMago > pontoDefinitivoPatrulheiro && pontoDefinitivoMago > pontoDefinitivoPaladino) {
             resultado.innerHTML = `MAGO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/mago.png">` 
             classe = `MAGO`
         }
 
         else if (pontoDefinitivoMonge > pontoDefinitivoBardo && pontoDefinitivoMonge > pontoDefinitivoBruxo && pontoDefinitivoMonge > pontoDefinitivoClerigo && pontoDefinitivoMonge > pontoDefinitivoDruida && pontoDefinitivoMonge > pontoDefinitivoFeiticeiro && pontoDefinitivoMonge > pontoDefinitivoGuerreiro && pontoDefinitivoMonge > pontoDefinitivoLadino && pontoDefinitivoMonge > pontoDefinitivoMago && pontoDefinitivoMonge > pontoDefinitivoBarbaro && pontoDefinitivoMonge > pontoDefinitivoPatrulheiro && pontoDefinitivoMonge > pontoDefinitivoPaladino) {
             resultado.innerHTML = `MONGE`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/monge.png">` 
             classe = `MONGE`
         }
 
         else if (pontoDefinitivoPatrulheiro > pontoDefinitivoBardo && pontoDefinitivoPatrulheiro > pontoDefinitivoBruxo && pontoDefinitivoPatrulheiro > pontoDefinitivoClerigo && pontoDefinitivoPatrulheiro > pontoDefinitivoDruida && pontoDefinitivoPatrulheiro > pontoDefinitivoFeiticeiro && pontoDefinitivoPatrulheiro > pontoDefinitivoGuerreiro && pontoDefinitivoPatrulheiro > pontoDefinitivoLadino && pontoDefinitivoPatrulheiro > pontoDefinitivoMago && pontoDefinitivoPatrulheiro > pontoDefinitivoMonge && pontoDefinitivoPatrulheiro > pontoDefinitivoBarbaro && pontoDefinitivoPatrulheiro > pontoDefinitivoPaladino) {
             resultado.innerHTML = `PATRULHEIRO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/patrulheiro.png">` 
             classe = `PATRULHEIRO`
         }
 
         else if (pontoDefinitivoPaladino > pontoDefinitivoBardo && pontoDefinitivoPaladino > pontoDefinitivoBruxo && pontoDefinitivoPaladino > pontoDefinitivoClerigo && pontoDefinitivoPaladino > pontoDefinitivoDruida && pontoDefinitivoPaladino > pontoDefinitivoFeiticeiro && pontoDefinitivoPaladino > pontoDefinitivoGuerreiro && pontoDefinitivoPaladino > pontoDefinitivoLadino && pontoDefinitivoPaladino > pontoDefinitivoMago && pontoDefinitivoPaladino > pontoDefinitivoMonge && pontoDefinitivoPaladino > pontoDefinitivoPatrulheiro && pontoDefinitivoPaladino > pontoDefinitivoBarbaro) {
             resultado.innerHTML = `PALADINO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/paladino.png">` 
             classe = `PALADINO`
         }
 
         else {
-            resultado.innerHTML = `EMPATE`
+            resultado.innerHTML = `MULTI-CLASSE`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/multiraca.png">` 
             classe = 'MULTICLASSE'
         }
 
@@ -1555,3 +1568,4 @@
     }
 
 </script>
+

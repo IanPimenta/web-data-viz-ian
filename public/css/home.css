@@ -1,6 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{font-family: 'Roboto', sans-serif;}
+
 body {
     margin: 0px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .header {
@@ -101,16 +105,18 @@ body {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 20px;
+    text-align: justify;
     margin: 20px;
     border-radius: 8px;
     font-size: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .bem-vindo h2 {
+    justify-self: center;
     color: darkred;
     margin-bottom: 10px;
 }
@@ -124,3 +130,50 @@ body {
     font-weight: bold;
 }
 
+.sobre-mim {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+.sobre-mim h2 {
+    justify-self: center;
+    color: darkred;
+    margin-bottom: 10px;
+}
+
+.sobre-mim p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.sobre-mim strong {
+    font-weight: bold;
+}
+
+.sobre-mim .sobre-mim-texto {
+    text-align: justify;
+    padding-inline: 1%;
+    width: 80%;
+}
+
+.sobre-mim .sobre-mim-imagem {
+    background-color: red;
+    height: 100%;
+    width: 21%;
+    border-radius: 5px;
+}
+
+.sobre-mim .sobre-mim-imagem img {
+    width: 100%;
+    border-radius: 5px;
+}

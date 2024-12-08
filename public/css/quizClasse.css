@@ -1,6 +1,6 @@
-* {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{font-family: 'Roboto', sans-serif;}
 
 body {
     margin: 0;
@@ -116,8 +116,27 @@ body {
     align-items: center;
     background-color: whitesmoke;
     height: 75%;
-    width: 70%;
+    width: 61%;
     border-radius: 5px;
+}
+
+.espaço-perguntas .caixa-finalizar .titulo {
+    flex-direction: column;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.espaço-perguntas .caixa-finalizar .imagem {
+    width: 90%;
+    height: 82%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.espaço-perguntas .caixa-finalizar .imagem img{
+    border-radius: 5px;
+    width: 100%;
 }
 
 

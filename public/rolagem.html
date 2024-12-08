@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/rolagem.css">
     <link rel="icon" type="image/png" href="imagens/d20 (1).png">
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -33,49 +34,63 @@
             </div>
         </div>
     </div>
+    <div id="infoBox" class="resultado">
+        <div class="titulo">RESULTADO:</div>
+        <div id="resultadoRolagem" class="resultadoRolagem">
+        </div>
+        <button id="closeButton" onclick="fechar()">Fechar</button>
+    </div>
     <div class="rolagem">
         <div class="container">
-            Informe o numero de lados do dado:
-            <select id="select_dados">
-                <option value="4">4</option>
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="20">20</option>
-                <option value="100">100</option>
-            </select> <br>
-            Informe quantos dados:
-            <input type="number" id="input_qtd_dados"> <br>
-            Informe o modificador desejável:
-            <input type="number" id="input_modificador"> <br>
-            <div id="mostrarResultado"></div><br>
-            <button onclick="rolarDados()">Rolar Dados!</button>
+            <div class="linha">
+                <div class="dado" onclick="rolard4()"><img src="imagens/imgRolagem/d4.png"><b>D4</b></div>
+                <div class="dado" onclick="rolard6()"><img src="imagens/imgRolagem/d6.png"><b>D6</b></div>
+                <div class="dado" onclick="rolard8()"><img src="imagens/imgRolagem/d8.png"><b>D8</b></div>
+            </div>
+            <div class="linha">
+                <div class="dado" onclick="rolard10()"><img src="imagens/imgRolagem/d10.png"><b>D10</b></div>
+                <div class="dado" onclick="rolard12()"><img src="imagens/imgRolagem/d12.png"><b>D12</b></div>
+                <div class="dado" onclick="rolard20()"><img src="imagens/imgRolagem/d20.png"><b>D20</b></div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
 <script>
-    function rolarDados() {
-        mostrarResultado.innerHTML = ``
-        const ladoDado = Number(select_dados.value)
-        const qtdDado = Number(input_qtd_dados.value)
-        const modificador = Number(input_modificador.value)
-        var valorDado = 0
-        
-        for (numero = 1; numero <= qtdDado; numero += 1) {
-            if (modificador > 0) {
-            mostrarResultado.innerHTML += `D${ladoDado}: 
-            ${valorDado = parseInt(Math.random() * ladoDado + 1)} + 
-            ${modificador} = ${valorDado + modificador} <br>`
-            }
 
-            else {
-                mostrarResultado.innerHTML += `D${ladoDado}: 
-            ${valorDado = parseInt(Math.random() * ladoDado + 1)}<br>`
-            }
-            }
+    const showInfoButton = document.getElementById('showInfoButton');
+    const infoBox = document.getElementById('infoBox');
+    const closeButton = document.getElementById('closeButton');
+
+    function rolard4() {
+        infoBox.style.display = 'flex'; // Torna a div visível
+        resultadoRolagem.innerHTML = `${parseInt((Math.random()*4) + 1)}`
     }
+    function rolard6() {
+        infoBox.style.display = 'flex'; // Torna a div visível
+        resultadoRolagem.innerHTML = `${parseInt((Math.random()*6) + 1)}`
+    }
+    function rolard8() {
+        infoBox.style.display = 'flex'; // Torna a div visível
+        resultadoRolagem.innerHTML = `${parseInt((Math.random()*8) + 1)}`
+    }
+    function rolard10() {
+        infoBox.style.display = 'flex'; // Torna a div visível
+        resultadoRolagem.innerHTML = `${parseInt((Math.random()*10) + 1)}`
+    }
+    function rolard12() {
+        infoBox.style.display = 'flex'; // Torna a div visível
+        resultadoRolagem.innerHTML = `${parseInt((Math.random()*12) + 1)}`
+    }
+    function rolard20() {
+        infoBox.style.display = 'flex'; // Torna a div visível
+        resultadoRolagem.innerHTML = `${parseInt((Math.random()*20) + 1)}`
+    }
+    function fechar() {
+        infoBox.style.display = 'none';
+    }
+
 </script>
 
 <!-- Math.random()*(valorMax-valorMin) + valorMin -->

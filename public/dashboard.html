@@ -37,6 +37,10 @@
     </div>
     <div class="espaco-dashboard">
         <div class="graficos">
+            <div class="titulo">
+                <div class="tituloGrafico1"><b>Quantidade de membros de cada classe</b></div>
+                <div class="tituloGrafico2"><b>Sua compatibilidade com cada classe</b></div>
+            </div>
             <div class="linha">
                 <div class="barras">
                     <canvas id="myChart"></canvas>
@@ -44,6 +48,10 @@
                 <div class="pizza">
                     <canvas id="myChart2"></canvas>
                 </div>
+            </div>
+            <div class="titulo">
+                <div class="tituloGrafico1"><b>Quantidade de membros de cada raça</b></div>
+                <div class="tituloGrafico2"><b>Sua compatibilidade com cada raça</b></div>
             </div>
             <div class="linha">
                 <div class="barras">
@@ -56,16 +64,57 @@
 
         </div>
         <div class="kpis">
-            <div id="div_perfil" style="background-color: ye;" class="usuario"> foto e nome do usuario</div>
-            <div id="div_classe" class="classe"></div>
-            <div id="div_raca" class="raca"> sua raça é:</div>
+            <div class="usuario">
+                <div id="div_nome" class="nomeUsuario">
+
+                </div>
+                <div class="dado">
+                    <img src="imagens/d20.png">
+                </div>
+            </div>
+            <div id="div_classe" class="classe">
+                <b>Classe</b>
+                <div id="div_imagem_classe" class="imagemClasse">
+
+                </div>
+                <div id="div_nome_classe" class="nomeClasse">
+
+                </div>
+            </div>
+            <div id="div_raca" class="raca">
+                <b>Raça</b>
+                <div id="div_imagem_raca" class="imagemRaca">
+
+                </div>
+                <div id="div_nome_raca" class="nomeRaca">
+
+                </div>
+            </div>
         </div>
     </div>
-
-
 </body>
 
 <script>
+    //imagens classe
+    const barbaroImg = `<img src="imagens/imgDashboard/barbaro.png">`
+    const bardoImg = `<img src="imagens/imgDashboard/bardo.png">`
+    const bruxoImg = `<img src="imagens/imgDashboard/bruxo.png">`
+    const clerigoImg = `<img src="imagens/imgDashboard/clerigo.png">`
+    const druidaImg = `<img src="imagens/imgDashboard/druida.png">`
+    const feiticeiroImg = `<img src="imagens/imgDashboard/feiticeiro.png">`
+    const guerreiroImg = `<img src="imagens/imgDashboard/guerreiro.png">`
+    const ladinoImg = `<img src="imagens/imgDashboard/ladino.png">`
+    const magoImg = `<img src="imagens/imgDashboard/mago.png">`
+    const mongeImg = `<img src="imagens/imgDashboard/monge.png">`
+    const paladinoImg = `<img src="imagens/imgDashboard/paladino.png">`
+    const patrulheiroImg = `<img src="imagens/imgDashboard/patrulheiro.png">`
+
+    //imagens raças
+    const anaoImg = `<img src="imagens/imgDashboard/anaoImg.png">`
+    const halflingImg = `<img src="imagens/imgDashboard/halflingImg.png">`
+    const humanoImg = `<img src="imagens/imgDashboard/humanoImg.png">`
+    const elfoImg = `<img src="imagens/imgDashboard/elfoImg.png">`
+
     const nomeClasse = []
     const pontosClasse = []
     const nomeRaca = []
@@ -84,18 +133,76 @@
 
     function chamarFuncoes() {
         if (sessionStorage.CLASSE_USUARIO == undefined) {
-            div_classe.innerHTML = 'Sua classe é: Faça o quiz primeiro'
+            div_nome_classe.innerHTML = 'Faça o quiz'
         } else {
-            div_classe.innerHTML = `Sua classe é: ${sessionStorage.CLASSE_USUARIO}`
+            div_nome_classe.innerHTML = `<b>${sessionStorage.CLASSE_USUARIO}</b>`
+            if (sessionStorage.CLASSE_USUARIO == "BARBARO") {
+                div_imagem_classe.innerHTML = barbaroImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "BARDO") {
+                div_imagem_classe.innerHTML = bardoImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "BRUXO") {
+                div_imagem_classe.innerHTML = bruxoImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "CLERIGO") {
+                div_imagem_classe.innerHTML = clerigoImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "DRUIDA") {
+                div_imagem_classe.innerHTML = druidaImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "FEITICEIRO") {
+                div_imagem_classe.innerHTML = feiticeiroImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "GUERREIRO") {
+                div_imagem_classe.innerHTML = guerreiroImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "LADINO") {
+                div_imagem_classe.innerHTML = ladinoImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "MAGO") {
+                div_imagem_classe.innerHTML = magoImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "MONGE") {
+                div_imagem_classe.innerHTML = mongeImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "PALADINO") {
+                div_imagem_classe.innerHTML = paladinoImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == "PATRULHEIRO") {
+                div_imagem_classe.innerHTML = patrulheiroImg
+            }
+            if (sessionStorage.CLASSE_USUARIO == undefined) {
+                div_imagem_classe.innerHTML = `x`
+            }
         }
+
 
         if (sessionStorage.RACA_USUARIO == undefined) {
-            div_raca.innerHTML = 'Sua raca é: Faça o quiz primeiro'
+            div_nome_raca.innerHTML = 'Faça o quiz'
         } else {
-            div_raca.innerHTML = `Sua raca é: ${sessionStorage.RACA_USUARIO}`
+            div_nome_raca.innerHTML = `<b>${sessionStorage.RACA_USUARIO}</b>`
+
+            if (sessionStorage.RACA_USUARIO == "ANAO") {
+                div_imagem_raca.innerHTML = anaoImg
+
+            }
+            if (sessionStorage.RACA_USUARIO == "HALFLING") {
+                div_imagem_raca.innerHTML = halflingImg
+
+            }
+            if (sessionStorage.RACA_USUARIO == "HUMANO") {
+                div_imagem_raca.innerHTML = humanoImg
+
+            }
+            if (sessionStorage.RACA_USUARIO == "ELFO") {
+                div_imagem_raca.innerHTML = elfoImg
+
+            }
         }
 
-        div_perfil.innerHTML = sessionStorage.NOME_USUARIO
+
+        div_nome.innerHTML = `<b>${sessionStorage.NOME_USUARIO}</b>`
 
         puxarPontosQuizClasse()
         puxarPontosQuizRaca()

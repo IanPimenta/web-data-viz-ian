@@ -1,6 +1,6 @@
-* {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{font-family: 'Roboto', sans-serif;}
 
 body {
     margin: 0px;
@@ -96,25 +96,57 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     
 }
 
 .espaco-dashboard .graficos {
     margin-top: 5%;
     height: 80%;
-    width: 75%;
+    width: 80%;
     display: flex;
     flex-direction: column;
 }
 
-.espaco-dashboard .graficos .linha {
+.espaco-dashboard .graficos .titulo {
     display: flex;
-    margin-left: 2%;
-    height: 50%;
+    height: 11%;
+    width: 99.4%;
+    border-radius: 5px;
+    margin-bottom: 0.1%;
+    margin-inline: 0.3%;
+}
+
+.espaco-dashboard .graficos .titulo .tituloGrafico1 {
+    background-color: darkred;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: whitesmoke;
+    height: 100%;
+    width: 59.9%;
+    margin-right: 0.3%;
+    border-radius: 5px;
+}
+
+.espaco-dashboard .graficos .titulo .tituloGrafico2 {
+    background-color: darkred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    height: 100%;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.espaco-dashboard .graficos .linha {
+    display: flex;
+    margin-inline: 0.3%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
 }
 
@@ -137,27 +169,102 @@ body {
 
 .espaco-dashboard .kpis {
     margin-top: 5%;
-    background-color: darkred;
     height: 89%;
-    width: 25%;
+    width: 20%;
     display: flex;
     flex-direction: column;
 }
 
 .espaco-dashboard .kpis .usuario{
-    width: 98%;
-    height: 38%;
-    border: solid whitesmoke 2px;
+    width: 100%;
+    height: 7.15%;
+    margin-bottom: 0.5%;
+    border-radius: 5px;
+    background-color: darkred;
+    border: solid darkred 3px;
+    display: flex;
+}
+
+.espaco-dashboard .kpis .usuario .nomeUsuario {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.espaco-dashboard .kpis .usuario .dado {
+    background-color: whitesmoke;
+    width: 17%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.espaco-dashboard .kpis .usuario .dado img {
+    height: 55%;
+    width: 100%;
+
 }
 
 .espaco-dashboard .kpis .classe{
-    border: solid whitesmoke 2px;
-    width: 98%;
-    height: 30%;
+    width: 100%;
+    height: 35.9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkred;
+    margin-bottom: 19%;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    border: solid darkred 3px;
 }
 
+.espaco-dashboard .kpis .classe .imagemClasse {
+    width: 46%;
+    height: 55%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.espaco-dashboard .kpis .classe .imagemClasse img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+
 .espaco-dashboard .kpis .raca {
-    border: solid whitesmoke 2px;
-    width: 98%;
-    height: 30%;
+    width: 100%;
+    height: 35.9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkred;
+    margin-bottom: 19%;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+    border: solid darkred 3px;
+}
+
+.espaco-dashboard .kpis .raca .imagemRaca {
+    width: 46%;
+    height: 55%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.espaco-dashboard .kpis .raca .imagemRaca img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }

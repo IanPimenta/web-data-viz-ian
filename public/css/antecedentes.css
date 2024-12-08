@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{font-family: 'Roboto', sans-serif;}
+
 body {
     margin: 0px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .header {
     position: fixed;
@@ -115,6 +118,7 @@ body {
     width: 70%;
     height: 450px;
     font-size: 20px;
+    color: #555;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -122,6 +126,7 @@ body {
 
 .informacoes .descricao h1{
     align-self: center;
+    color: darkred;
 }
 
 .informacoes button {
