@@ -219,7 +219,7 @@
                         povo bom e forte. Não que haja algo de errado com os barões e os soldados – é preciso
                         admirar a sua convicção. E protegendo suas próprias terras, eles também nos protegem.</p>
                 </div>
-                <div class="questao" onclick="Humano()">
+                <div class="questao" onclick="humano()">
                     <p>Nenhuma</p>
                 </div>
             </div>
@@ -228,8 +228,8 @@
                 </button></div>
             </div>
             <div id="final" class="caixa-finalizar">
-                <div class="imagem"></div>
-                <div class="titulo" id="resultado">
+                <div class="imagem" id="div_imagem"></div>
+                <div class="titulo" id="div_resultado"></div>
             </div>
         </div>
 </body>
@@ -666,30 +666,35 @@
         pontoDefinitivoElfo = pontoelfo + ponto2elfo + ponto3elfo + ponto4elfo + ponto5elfo + ponto6elfo + ponto7elfo
 
         if (pontoDefinitivoAnao > pontoDefinitivoHalfling && pontoDefinitivoAnao > pontoDefinitivoHumano && pontoDefinitivoAnao > pontoDefinitivoElfo) {
-            resultado.innerHTML = `ANAO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/anaoQuiz.png">`
+            div_resultado.innerHTML = `<b>ANAO</b> Você se enquadra como uma pessoa que não esquece fácil das coisas que fizeram a você, sejam essas coisas boas ou ruins. Possui grande coragem, e é um amigo(a) leal, apesar de ser meio amargurado(a)`
             raca = `ANAO`
         }
 
         else if (pontoDefinitivoHalfling > pontoDefinitivoAnao && pontoDefinitivoHalfling > pontoDefinitivoHumano && pontoDefinitivoHalfling > pontoDefinitivoElfo) {
-            resultado.innerHTML = `HALFLING`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/halflingQuiz.png">`
+            div_resultado.innerHTML = `<b>HALFLING</b> Você é uma pessoa que busca paz, não é chegado a grandes aventuras. É um pouco ingenuo(a) e tende a confiar demais nas outras pessoas, e isso o faz ser um excelente companheiro(a).`
             raca = `HALFLING`
 
         }
 
         else if (pontoDefinitivoHumano > pontoDefinitivoAnao && pontoDefinitivoHumano > pontoDefinitivoHalfling && pontoDefinitivoHumano > pontoDefinitivoElfo) {
-            resultado.innerHTML = `HUMANO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/humanoQuiz.png">`
+            div_resultado.innerHTML = `<b>HUMANO</b> Você é uma pessoa que almeja poder e conquistas. Tende a ser desconfiado, mas isso é o que faz sua espécie sobreviver. É capaz de se adaptar aos meios, independente dos obstáculos.`
             raca = `HUMANO`
 
         }
 
         else if (pontoDefinitivoElfo > pontoDefinitivoAnao && pontoDefinitivoElfo > pontoDefinitivoHalfling && pontoDefinitivoElfo > pontoDefinitivoHumano) {
-            resultado.innerHTML = `ELFO`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/elfoQuiz.png">`
+            div_resultado.innerHTML = `<b>ELFO</b> Você é uma pessoa calma e despreocupada, emite uma energia misteriosa que dificulta a leitura de sua personalidade. Demonstra em suas ações cautela e requinte, sendo reconhecida por seu perfeccionismo.`
             raca = `ELFO`
         }
 
 
         else {
-            resultado.innerHTML = `EMPATE`
+            div_imagem.innerHTML = `<img src="imagens/imgQuiz/multiraca.png">`
+            div_resultado.innerHTML = `<b>MULTI-RAÇA</b> Parece que você possui caracteristicas compativeis com mais de uma raça, verifique sua dashboard para ver a compatibilidade com cada uma.`
             raca = `MULTIRAÇA`
         }
 
@@ -698,3 +703,4 @@
     }
 
 </script>
+

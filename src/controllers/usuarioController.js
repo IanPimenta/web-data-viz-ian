@@ -74,8 +74,73 @@ function cadastrar(req, res) {
             );
     }
 }
+// aqui
+function puxarClasseUsuario(req, res) {
+    var idUsuario = req.params.idUsuario
+
+    if (idUsuario == undefined) {
+        res.status(400).send("id usuario está undefined!");
+    } else {
+
+        usuarioModel.puxarClasseUsuario(idUsuario)
+            .then(
+                function (resultado) {
+
+                    if (resultado.length >= 1) {
+                        console.log(resultado);
+
+                        res.json(resultado)
+
+                    } else {
+                        res.status(403).send("Puxar Classe Usuario inválido(s)");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro no select de classe usuario: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
+function puxarRacaUsuario(req, res) {
+    var idUsuario = req.params.idUsuario
+
+    if (idUsuario == undefined) {
+        res.status(400).send("id usuario está undefined!");
+    } else {
+
+        usuarioModel.puxarRacaUsuario(idUsuario)
+            .then(
+                function (resultado) {
+
+                    if (resultado.length >= 1) {
+                        console.log(resultado);
+
+                        res.json(resultado)
+
+                    } else {
+                        res.status(403).send("Puxar Raca Usuario inválido(s)");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro no select de Raca usuario: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+// aqui
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    puxarClasseUsuario,
+    puxarRacaUsuario
 }

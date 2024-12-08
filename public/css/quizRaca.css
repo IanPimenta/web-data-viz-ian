@@ -58,6 +58,7 @@ body {
 }
 
 .opcao {
+    cursor: pointer;
     display: inline-block;
     transition: transform 0.5s ease;
     text-decoration: none;
@@ -65,12 +66,14 @@ body {
 }
 
 .container .botoes {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 220px;
     min-width: 220px;
+
 }
 
 .botoes button {
@@ -86,7 +89,6 @@ body {
 
 .botoes button:hover {
     transform: scale(1.2);
-    cursor: pointer;
 }
 
 .espaço-perguntas {
@@ -105,8 +107,27 @@ body {
     align-items: center;
     background-color: whitesmoke;
     height: 75%;
-    width: 70%;
+    width: 61%;
     border-radius: 5px;
+}
+
+.espaço-perguntas .caixa-finalizar .titulo {
+    flex-direction: column;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.espaço-perguntas .caixa-finalizar .imagem {
+    width: 90%;
+    height: 82%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.espaço-perguntas .caixa-finalizar .imagem img{
+    border-radius: 5px;
+    width: 100%;
 }
 
 
@@ -138,6 +159,7 @@ body {
 }
 
 .espaço-perguntas .caixa-iniciar-raca .botao{
+    cursor: pointer;
     background-color: darkred;
     color: whitesmoke;
     border-radius: 5px;
@@ -148,7 +170,6 @@ body {
     background-color: darkred;
     color: white;
     border: none;
-    cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
     height: 100%;

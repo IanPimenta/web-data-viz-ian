@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.25, maximum-scale=1.25, user-scalable=no">
@@ -56,7 +57,8 @@
                     </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
                     <div class="irCadastro">
-                        <p>Ainda não possui cadastro? <u onclick="window.location.href='cadastro.html'">Inscreva-se</u></p>
+                        <p>Ainda não possui cadastro? <u onclick="window.location.href='cadastro.html'">Inscreva-se</u>
+                        </p>
                     </div>
                 </div>
 
@@ -73,90 +75,128 @@
 </html>
 
 <script>
-// Função para exibir o carregamento
-function aguardar() {
-    document.getElementById('div_aguardar').style.display = 'block'; // Exibe a animação de carregamento
-}
-
-// Função para esconder o carregamento
-function finalizarAguardar(mensagemErro) {
-    document.getElementById('div_aguardar').style.display = 'none'; // Esconde a animação de carregamento
-
-    if (mensagemErro) {
-        document.getElementById('cardErro').style.display = 'block'; // Exibe a mensagem de erro
-        document.getElementById('mensagem_erro').innerHTML = mensagemErro;
-    }
-}
-
-function entrar() {
-    aguardar(); 
-
-    var emailVar = document.getElementById('email_input').value;
-    var senhaVar = document.getElementById('senha_input').value;
-
-    if (emailVar == "" || senhaVar == "") {
-        document.getElementById('cardErro').style.display = "block";
-        document.getElementById('mensagem_erro').innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        finalizarAguardar(); // Chama a função para esconder o carregamento
-        return false;
-    } else {
-        setInterval(sumirMensagem, 5000); // Esta função vai desaparecer a mensagem de erro após 5 segundos
+    // Função para exibir o carregamento
+    function aguardar() {
+        document.getElementById('div_aguardar').style.display = 'block'; // Exibe a animação de carregamento
     }
 
-    console.log("FORM LOGIN: ", emailVar);
-    console.log("FORM SENHA: ", senhaVar);
+    // Função para esconder o carregamento
+    function finalizarAguardar(mensagemErro) {
+        document.getElementById('div_aguardar').style.display = 'none'; // Esconde a animação de carregamento
 
-    fetch("/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: emailVar,
-            senhaServer: senhaVar
+        if (mensagemErro) {
+            document.getElementById('cardErro').style.display = 'block'; // Exibe a mensagem de erro
+            document.getElementById('mensagem_erro').innerHTML = mensagemErro;
+        }
+    }
+
+
+    //aqui
+    function puxarClasseUsuario() {
+
+        fetch(`/usuarios/puxarClasseUsuario/${sessionStorage.ID_USUARIO}`, {
+            method: "GET"
         })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!");
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log(resposta);
 
-        if (resposta.ok) {
-            console.log(resposta);
+                    resposta.json().then(json => {
+                        sessionStorage.CLASSE_USUARIO = json[0].classe;
+                    });
 
-            resposta.json().then(json => {
-                console.log(json);
-                sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
-                sessionStorage.ID_USUARIO = json[0].idUsuario;
+                }
+            })
+    }
 
-                setTimeout(function () {
-                    window.location = "./indexLogin.html";
-                }, 1000);
-            });
+    function puxarRacaUsuario() {
 
+        fetch(`/usuarios/puxarRacaUsuario/${sessionStorage.ID_USUARIO}`, {
+            method: "GET"
+        })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        sessionStorage.RACA_USUARIO = json[0].raca;
+                    });
+
+                }
+            })
+    }
+    //aqui
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = document.getElementById('email_input').value;
+        var senhaVar = document.getElementById('senha_input').value;
+
+        if (emailVar == "" || senhaVar == "") {
+            document.getElementById('cardErro').style.display = "block";
+            document.getElementById('mensagem_erro').innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar(); // Chama a função para esconder o carregamento
+            return false;
         } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar(texto); // Passa a mensagem de erro
-            });
+            setInterval(sumirMensagem, 5000); // Esta função vai desaparecer a mensagem de erro após 5 segundos
         }
 
-    }).catch(function (erro) {
-        console.log(erro);
-        finalizarAguardar("Erro ao realizar o login"); // Exibe a mensagem de erro
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!");
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    sessionStorage.NOME_USUARIO = json[0].nomeUsuario;
+                    sessionStorage.ID_USUARIO = json[0].idUsuario;
+                    puxarClasseUsuario()
+                    puxarRacaUsuario()
+
+                    setTimeout(function () {
+                        window.location = "./indexLogin.html";
+                    }, 1000);
+                });
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto); // Passa a mensagem de erro
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+            finalizarAguardar("Erro ao realizar o login"); // Exibe a mensagem de erro
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        document.getElementById('cardErro').style.display = "none"; // Esconde a mensagem de erro
+    }
+
+    // Exibe ou oculta a senha
+    document.getElementById('showPassword').addEventListener('change', function () {
+        const passwordField = document.getElementById('senha_input');
+        passwordField.type = this.checked ? 'text' : 'password';
     });
-
-    return false;
-}
-
-function sumirMensagem() {
-    document.getElementById('cardErro').style.display = "none"; // Esconde a mensagem de erro
-}
-
-// Exibe ou oculta a senha
-document.getElementById('showPassword').addEventListener('change', function() {
-    const passwordField = document.getElementById('senha_input');
-    passwordField.type = this.checked ? 'text' : 'password';
-});
 
 </script>

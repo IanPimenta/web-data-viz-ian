@@ -22,7 +22,29 @@ function cadastrar(nomeCompleto, nomeUsuario, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+//aqui
+function puxarClasseUsuario(
+    idUsuario) {
+    console.log('Tentando puxar classe usuario no banco')
+    var instrucaoSql = `select classe from quizClasse
+	where fkUsuario = ${idUsuario};`
+
+    return database.executar(instrucaoSql)
+}
+
+function puxarRacaUsuario(
+    idUsuario) {
+    console.log('Tentando puxar Raca usuario no banco')
+    var instrucaoSql = `select raca from quizRaca
+	where fkUsuario = ${idUsuario};`
+
+    return database.executar(instrucaoSql)
+}
+//aqui
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    puxarClasseUsuario,
+    puxarRacaUsuario
 };
